@@ -54,83 +54,87 @@ h1 #t-i {
   color: #3498db;
 }
 
-/* line 48, ../../scss/style.scss */
+/* line 47, ../../scss/style.scss */
+body header {
+  z-index: 10;
+}
+/* line 49, ../../scss/style.scss */
 body header #hdr-right {
   float: right;
   margin-right: 50px;
   font-size: 1.3em;
 }
-/* line 52, ../../scss/style.scss */
+/* line 53, ../../scss/style.scss */
 body header #hdr-right a {
   margin-left: 30px;
   height: 100%;
   text-decoration: none;
 }
-/* line 56, ../../scss/style.scss */
+/* line 57, ../../scss/style.scss */
 body header #hdr-right a span {
   -webkit-transition: -webkit-transform .15s linear;
   -moz-transition: -moz-transform .15s linear;
   transition: transform .15s linear;
 }
-/* line 61, ../../scss/style.scss */
+/* line 62, ../../scss/style.scss */
 body header #hdr-right a:hover span {
   -webkit-transform: scale(1.5);
   -moz-transform: scale(1.5);
   transform: scale(1.5);
 }
-/* line 67, ../../scss/style.scss */
+/* line 68, ../../scss/style.scss */
 body header #hdr-right a:first-child:hover {
   color: #2ecc71;
 }
-/* line 72, ../../scss/style.scss */
+/* line 73, ../../scss/style.scss */
 body header #hdr-right a:last-child:hover {
   color: #3498db;
 }
-/* line 77, ../../scss/style.scss */
+/* line 78, ../../scss/style.scss */
 body header #hdr-right #like {
   font-family: Love;
   color: white;
 }
-/* line 80, ../../scss/style.scss */
+/* line 81, ../../scss/style.scss */
 body header #hdr-right #like.liked, body header #hdr-right #like:hover {
   color: #e74c3c;
 }
-/* line 85, ../../scss/style.scss */
+/* line 86, ../../scss/style.scss */
 body header #hdr-right #remove.removing, body header #hdr-right #remove:hover {
   color: #f39c12;
 }
-/* line 90, ../../scss/style.scss */
+/* line 91, ../../scss/style.scss */
 body header #hdr-right #pin.pinning, body header #hdr-right #pin:hover {
   color: #2ecc71;
 }
 
-/* line 97, ../../scss/style.scss */
+/* line 98, ../../scss/style.scss */
 body:not(.gallery) header {
   width: 100%;
   height: 150px;
 }
-/* line 100, ../../scss/style.scss */
+/* line 101, ../../scss/style.scss */
 body:not(.gallery) header #hdr-left {
   float: left;
   margin-left: 50px;
   height: 150px;
 }
-/* line 104, ../../scss/style.scss */
+/* line 105, ../../scss/style.scss */
 body:not(.gallery) header #hdr-left h1 {
   margin: 0px;
   line-height: 150px;
   height: 100%;
 }
-/* line 111, ../../scss/style.scss */
+/* line 112, ../../scss/style.scss */
 body:not(.gallery) header #hdr-right {
   margin-top: 40px;
 }
-/* line 113, ../../scss/style.scss */
+/* line 114, ../../scss/style.scss */
 body:not(.gallery) header #hdr-right a {
   color: black;
 }
 
-/* line 119, ../../scss/style.scss */
+/* line 120, ../../scss/style.scss */
 body.gallery > header {
   position: fixed;
   top: 0px;
@@ -142,39 +146,39 @@ body.gallery > header {
   border-width: 0px 0px 5px 0px;
   border-color: white;
 }
-/* line 131, ../../scss/style.scss */
+/* line 132, ../../scss/style.scss */
 body.gallery > header #hdr-left {
   float: left;
   margin-left: 50px;
   height: 60px;
 }
-/* line 135, ../../scss/style.scss */
+/* line 136, ../../scss/style.scss */
 body.gallery > header #hdr-left h1 {
   font-size: 1.5em;
   margin: 0px;
   height: 100%;
   line-height: 60px;
 }
-/* line 140, ../../scss/style.scss */
+/* line 141, ../../scss/style.scss */
 body.gallery > header #hdr-left h1 #t-p, body.gallery > header #hdr-left h1 #t-d {
   color: white;
 }
-/* line 146, ../../scss/style.scss */
+/* line 147, ../../scss/style.scss */
 body.gallery > header #hdr-right {
   height: 60px;
 }
-/* line 148, ../../scss/style.scss */
+/* line 149, ../../scss/style.scss */
 body.gallery > header #hdr-right a {
   color: white;
   line-height: 60px;
 }
 
-/* line 155, ../../scss/style.scss */
+/* line 156, ../../scss/style.scss */
 a {
   text-decoration: none;
 }
 
-/* line 159, ../../scss/style.scss */
+/* line 160, ../../scss/style.scss */
 #gallery {
   width: 100%;
   margin-top: 62px;
@@ -182,21 +186,21 @@ a {
   padding-right: 2px;
   margin-bottom: 2px;
 }
-/* line 166, ../../scss/style.scss */
+/* line 167, ../../scss/style.scss */
 #gallery a:hover img {
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
   filter: blur(2px);
 }
 
-/* line 174, ../../scss/style.scss */
+/* line 175, ../../scss/style.scss */
 img {
   float: left;
   margin-left: 3px;
   margin-bottom: 3px;
 }
 
-/* line 180, ../../scss/style.scss */
+/* line 181, ../../scss/style.scss */
 #upload-form {
   position: fixed;
   top: 0px;
@@ -205,60 +209,60 @@ img {
   right: 0px;
 }
 
-/* line 188, ../../scss/style.scss */
+/* line 189, ../../scss/style.scss */
 .dz-preview {
   display: none;
 }
 
-/* line 192, ../../scss/style.scss */
+/* line 193, ../../scss/style.scss */
 .love {
   color: #e74c3c;
 }
 
-/* line 196, ../../scss/style.scss */
+/* line 197, ../../scss/style.scss */
 .my-galleries, .liked-galleries {
   clear: left;
   font-size: 2em;
   padding-left: 60px;
 }
-/* line 200, ../../scss/style.scss */
+/* line 201, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 2) > a, .liked-galleries li:nth-child(6n + 2) > a {
   color: #e74c3c;
 }
-/* line 203, ../../scss/style.scss */
+/* line 204, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 3) > a, .liked-galleries li:nth-child(6n + 3) > a {
   color: #e67e22;
 }
-/* line 206, ../../scss/style.scss */
+/* line 207, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 4) > a, .liked-galleries li:nth-child(6n + 4) > a {
   color: #f39c12;
 }
-/* line 209, ../../scss/style.scss */
+/* line 210, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 5) > a, .liked-galleries li:nth-child(6n + 5) > a {
   color: #f1c40f;
 }
-/* line 212, ../../scss/style.scss */
+/* line 213, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 6) > a, .liked-galleries li:nth-child(6n + 6) > a {
   color: #2ecc71;
 }
-/* line 215, ../../scss/style.scss */
+/* line 216, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 1) > a, .liked-galleries li:nth-child(6n + 1) > a {
   color: #3498db;
 }
-/* line 218, ../../scss/style.scss */
+/* line 219, ../../scss/style.scss */
 .my-galleries li.plus > a, .liked-galleries li.plus > a {
   color: black;
 }
-/* line 221, ../../scss/style.scss */
+/* line 222, ../../scss/style.scss */
 .my-galleries ul, .liked-galleries ul {
   display: block;
 }
-/* line 223, ../../scss/style.scss */
+/* line 224, ../../scss/style.scss */
 .my-galleries ul li, .liked-galleries ul li {
   padding-left: 0px;
   display: inline;
 }
-/* line 226, ../../scss/style.scss */
+/* line 227, ../../scss/style.scss */
 .my-galleries ul li a, .liked-galleries ul li a {
   background-color: white;
   display: inline;
@@ -278,12 +282,12 @@ img {
   -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
 }
-/* line 245, ../../scss/style.scss */
+/* line 246, ../../scss/style.scss */
 .my-galleries ul li a:after, .liked-galleries ul li a:after {
   content: attr(title);
   display: block;
 }
-/* line 249, ../../scss/style.scss */
+/* line 250, ../../scss/style.scss */
 .my-galleries ul li a img, .liked-galleries ul li a img {
   display: block;
   width: 200px;
@@ -296,7 +300,7 @@ img {
   line-height: 200px;
   background-color: #E7E7E7;
 }
-/* line 263, ../../scss/style.scss */
+/* line 264, ../../scss/style.scss */
 .my-galleries ul li:nth-child(1n) a:hover, .liked-galleries ul li:nth-child(1n) a:hover {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
@@ -307,19 +311,19 @@ img {
   position: relative;
   z-index: 5;
 }
-/* line 273, ../../scss/style.scss */
+/* line 274, ../../scss/style.scss */
 .my-galleries ul li a, .liked-galleries ul li a {
   -webkit-transform: rotate(-2deg);
   -moz-transform: rotate(-2deg);
   transform: rotate(-2deg);
 }
-/* line 278, ../../scss/style.scss */
+/* line 279, ../../scss/style.scss */
 .my-galleries ul li:nth-child(even) a, .liked-galleries ul li:nth-child(even) a {
   -webkit-transform: rotate(2deg);
   -moz-transform: rotate(2deg);
   transform: rotate(2deg);
 }
-/* line 283, ../../scss/style.scss */
+/* line 284, ../../scss/style.scss */
 .my-galleries ul li:nth-child(3n) a, .liked-galleries ul li:nth-child(3n) a {
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -327,7 +331,7 @@ img {
   position: relative;
   top: -5px;
 }
-/* line 290, ../../scss/style.scss */
+/* line 291, ../../scss/style.scss */
 .my-galleries ul li:nth-child(4n) a, .liked-galleries ul li:nth-child(4n) a {
   -webkit-transform: rotate(5deg);
   -moz-transform: rotate(5deg);
@@ -336,17 +340,17 @@ img {
   right: 5px;
 }
 
-/* line 300, ../../scss/style.scss */
+/* line 301, ../../scss/style.scss */
 .my-galleries {
   padding-top: 70px;
 }
 
-/* line 304, ../../scss/style.scss */
+/* line 305, ../../scss/style.scss */
 .rm-container.removing a:hover {
   opacity: 0.4;
   background-color: #2ecc71;
 }
-/* line 307, ../../scss/style.scss */
+/* line 308, ../../scss/style.scss */
 .rm-container.removing a:hover img {
   opacity: 0.4;
 }
