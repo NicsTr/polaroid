@@ -18,6 +18,14 @@ class UploadForm(forms.ModelForm):
                     'gl': forms.HiddenInput(),
                 }
 
+    def is_valid(self, user, *args, **kwargs):
+        valid = super(UploadForm, self).is_valid(*args, **kwargs)
+        gal = self.cleaned_data.get("gl")
+        if gal.owner != user:
+            return False
+        else:
+            return valid
+
     def save(self, img, owner):
         gal = self.cleaned_data.get("gl")
         new_img = Image(

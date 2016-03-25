@@ -75,7 +75,7 @@ def upload(request):
         # Handle this properly (error message)
         return redirect("index")
     form = UploadForm(request.POST, request.FILES)
-    if form.is_valid():
+    if form.is_valid(request.user):
         form.save(request.FILES["path"], request.user)
     return redirect("index")
 
