@@ -60,3 +60,10 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+polaroid/db/*.db
+polaroid/settings/local.py
+
+.DS_Store
+
+website/static/polaroid/.sass-cache/
