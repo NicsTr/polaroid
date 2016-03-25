@@ -39,7 +39,7 @@
         url: "{% url 'upload' %}",
     });
     dpz.on("sending", function(file, xhr, formData) {
-        formData.append("gallery", "{{ gal.id }}");
+        formData.append("gl", "{{ gal.id }}");
         formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
     });
     dpz.on("success", function(file, xhr) {
