@@ -38,3 +38,4 @@ var arrange_gallery = function() {
 
 $(window).on("load", arrange_gallery);
 
+$(window).resize(arrange_gallery);
