@@ -1,6 +1,7 @@
 
 var set_cover = function(el) {
     $.ajax("/cover/set/" + $("#gid").val() + "/" + $("img", el).attr("data-id"));
+    display_alert("pinned");
 }
 
 var get_cover = function(el) {

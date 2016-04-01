@@ -8,6 +8,7 @@ var remove = function(el) {
             if (xhr.responseText == "OK") {
                 $(el).remove();
                 arrange_gallery();
+                display_alert("removed");
             }
         });
     } else {

@@ -77,7 +77,8 @@ def upload(request):
     form = UploadForm(request.POST, request.FILES)
     if form.is_valid(request.user):
         form.save(request.FILES["path"], request.user)
-    return redirect("index")
+        return HttpResponse("OK")
+    return HttpResponse("KO")
 
 
 ## User management ##

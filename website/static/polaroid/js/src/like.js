@@ -7,6 +7,7 @@
         }
         $("#like").addClass("liked");
         Cookies.set("liked", Cookies.get("liked") + gid + ";");
+        display_alert("liked");
     }
 
     var unlike = function(gid) {
@@ -20,6 +21,7 @@
             liked_str = "";
         $("#like").removeClass("liked");
         Cookies.set("liked", liked_str);
+        display_alert("unliked");
     }
 
     var is_liked = function(gid) {

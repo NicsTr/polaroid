@@ -354,3 +354,94 @@ img {
 .rm-container.removing a:hover img {
   opacity: 0.4;
 }
+
+@-webkit-keyframes appear {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+@keyframes appear {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+/* line 322, ../../scss/style.scss */
+#alert {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+}
+/* line 330, ../../scss/style.scss */
+#alert .alert-txt {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 200px;
+  margin: auto;
+  font-size: 10em;
+  text-align: center;
+  color: white;
+}
+/* line 343, ../../scss/style.scss */
+#alert.active {
+  opacity: 1;
+}
+/* line 346, ../../scss/style.scss */
+#alert.pinned {
+  z-index: 99;
+  background-color: #2ecc71;
+}
+/* line 349, ../../scss/style.scss */
+#alert.pinned .alert-txt:before {
+  content: "PINNED AS COVER!";
+}
+/* line 353, ../../scss/style.scss */
+#alert.removed {
+  z-index: 99;
+  background-color: #f39c12;
+}
+/* line 356, ../../scss/style.scss */
+#alert.removed .alert-txt:before {
+  content: "PICTURE REMOVED!";
+}
+/* line 360, ../../scss/style.scss */
+#alert.liked {
+  z-index: 99;
+  background-color: #e74c3c;
+}
+/* line 363, ../../scss/style.scss */
+#alert.liked .alert-txt:before {
+  font-family: 'Glyphicons Halflings';
+  content: "\e005 ";
+}
+/* line 367, ../../scss/style.scss */
+#alert.liked .alert-txt:after {
+  content: " IT!";
+}
+/* line 371, ../../scss/style.scss */
+#alert.unliked {
+  z-index: 99;
+  background-color: #e74c3c;
+}
+/* line 374, ../../scss/style.scss */
+#alert.unliked .alert-txt:before {
+  content: "UN-";
+}
+/* line 377, ../../scss/style.scss */
+#alert.unliked .alert-txt:after {
+  font-family: 'Glyphicons Halflings';
+  content: "\e005 ";
+}
