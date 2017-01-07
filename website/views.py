@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
 
 from website.models import Gallery, Image
 from website.forms import UploadForm
@@ -29,6 +30,29 @@ def cover_gallery(request, gid):
         return HttpResponse()
     else:
         return HttpResponse(gid + ";" + cover.id)
+
+def name_gallery(request, gid):
+    name = Gallery.objects.get(id=gid).name
+    if name is None:
+        return HttpResponse("")
+    else:
+        return HttpResponse(gid + ";" + name)
+
+@login_required
+@csrf_exempt
+def set_name_gallery(request, gid):
+    try:
+        name = request.POST["name"]
+    except KeyError:
+        return HttpResponse("KO")
+    gl = Gallery.objects.get(id=gid)
+    if gl is None or gl.owner != request.user:
+        return HttpResponse("KO")
+    if name == "":
+        return HttpResponse("KO")
+    gl.name = name
+    gl.save()
+    return HttpResponse("OK")
 
 @login_required
 def set_cover_gallery(request, gid, mid):
@@ -105,3 +129,4 @@ def register(request):
         # Else we show a registration form
         ctxt["reg_form"] = reg_form
         return render(request, tpl, ctxt)
+

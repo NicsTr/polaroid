@@ -5,8 +5,7 @@ var set_cover = function(el) {
 }
 
 var get_cover = function(el) {
-    console.log($(el));
-    $.ajax("cover/" + $(el).attr("title")).complete(function(xhr) {
+    $.ajax("cover/" + $(el).attr("data-id")).complete(function(xhr) {
         if (xhr.responseText != "") {
             var data = xhr.responseText.split(";");
             var gid = data[0];

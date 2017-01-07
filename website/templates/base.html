@@ -36,6 +36,12 @@
             </h1>
         </div>
         {% endblock %}
+        <div id="hdr-center">
+            {% if user == gal.owner %}
+            <input type="text" id="naming" placeholder="name your gallery!" 
+            value="{% endif %}{% if gal.name != None %}{{ gal.name }}{% endif %}{% if user == gal.owner %}">
+            {% endif %}
+        </div>
         <div id="hdr-right">
             {% block hdr-right %}
             {% endblock %}

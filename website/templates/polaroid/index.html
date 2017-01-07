@@ -4,6 +4,7 @@
 
 {% block extra_include %}
     <script src="{% static 'polaroid/js/src/cover.js' %}" type="text/javascript"></script>
+    <script src="{% static 'polaroid/js/src/name.js' %}" type="text/javascript"></script>
 {% endblock %}
 
 {% block hdr-right %}
@@ -25,7 +26,7 @@
     <ul>
         <li class="plus"><a title="NEW GALLERY" href="{% url 'create' %}"><img src="" alt="+"></a></li> 
         {% for gal in galleries %}
-        <li class="{{ gal.id }}"><a title="{{ gal.id }}" href="{% url 'gallery' gal.id %}"><img src=""></a></li>
+        <li class="{{ gal.id }}"><a title="{% if gal.name != None and gal.name != "" %}{{ gal.name }}{% else %}{{ gal.id }}{% endif %}" data-id="{{ gal.id }}" href="{% url 'gallery' gal.id %}"><img src=""></a></li>
         {% endfor %}
     </ul>
 </div>
@@ -37,7 +38,7 @@
         var liked = Cookies.get("liked").split(";");
         for (i = 0; i < liked.length; i++) {
             if (liked[i] != "" )
-            $("#liked").append("<li class=\"" + liked[i] + "\"><a title=\"" + liked[i] + "\" href=\"/gl/" + liked[i] + "\"><img src=\"\"></a></li>");
+            $("#liked").append("<li class=\"" + liked[i] + "\"><a title=\"" + liked[i] + "\" data-id=\"" + liked[i] + "\" href=\"/gl/" + liked[i] + "\"><img src=\"\"></a></li>");
         }   
         activate_rm();
         $(".my-galleries li a").each(function() {
@@ -45,6 +46,7 @@
         });
         $(".liked-galleries li a").each(function() {
             get_cover(this);
+            get_name(this);
         });
     });
 {% endblock %}

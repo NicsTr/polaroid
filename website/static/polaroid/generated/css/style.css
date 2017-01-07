@@ -107,100 +107,118 @@ body header #hdr-right #remove.removing, body header #hdr-right #remove:hover {
 body header #hdr-right #pin.pinning, body header #hdr-right #pin:hover {
   color: #2ecc71;
 }
+/* line 96, ../../scss/style.scss */
+body header #hdr-right #name.naming, body header #hdr-right #name:hover {
+  color: #34495e;
+}
 
-/* line 98, ../../scss/style.scss */
+/* line 103, ../../scss/style.scss */
 body:not(.gallery) header {
   width: 100%;
   height: 150px;
 }
-/* line 101, ../../scss/style.scss */
+/* line 106, ../../scss/style.scss */
 body:not(.gallery) header #hdr-left {
   float: left;
   margin-left: 50px;
   height: 150px;
 }
-/* line 105, ../../scss/style.scss */
+/* line 110, ../../scss/style.scss */
 body:not(.gallery) header #hdr-left h1 {
   margin: 0px;
   line-height: 150px;
   height: 100%;
 }
-/* line 112, ../../scss/style.scss */
+/* line 117, ../../scss/style.scss */
 body:not(.gallery) header #hdr-right {
   margin-top: 40px;
 }
-/* line 114, ../../scss/style.scss */
+/* line 119, ../../scss/style.scss */
 body:not(.gallery) header #hdr-right a {
   color: black;
 }
 
-/* line 120, ../../scss/style.scss */
+/* line 125, ../../scss/style.scss */
 body.gallery > header {
   position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
-  height: 60px;
-  background-color: black;
+  height: 30px;
+  background-color: rgba(55, 55, 55, 0.6);
   border-style: solid;
-  border-width: 0px 0px 5px 0px;
-  border-color: white;
-}
-/* line 132, ../../scss/style.scss */
-body.gallery > header #hdr-left {
-  float: left;
-  margin-left: 50px;
-  height: 60px;
+  border-width: 0px 0px 0px 0px;
 }
 /* line 136, ../../scss/style.scss */
+body.gallery > header #hdr-left {
+  position: absolute;
+  z-index: 2;
+  float: left;
+  margin-left: 50px;
+  height: 30px;
+}
+/* line 142, ../../scss/style.scss */
 body.gallery > header #hdr-left h1 {
-  font-size: 1.5em;
+  font-size: 1em;
   margin: 0px;
   height: 100%;
-  line-height: 60px;
+  line-height: 30px;
 }
-/* line 141, ../../scss/style.scss */
-body.gallery > header #hdr-left h1 #t-p, body.gallery > header #hdr-left h1 #t-d {
+/* line 153, ../../scss/style.scss */
+body.gallery > header #hdr-center {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
   color: white;
 }
-/* line 147, ../../scss/style.scss */
+/* line 163, ../../scss/style.scss */
+body.gallery > header #hdr-center input#naming {
+  width: 300px;
+  background-color: transparent;
+  text-align: center;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 177, ../../scss/style.scss */
 body.gallery > header #hdr-right {
-  height: 60px;
+  height: 30px;
 }
-/* line 149, ../../scss/style.scss */
+/* line 179, ../../scss/style.scss */
 body.gallery > header #hdr-right a {
+  font-size: 0.6em;
   color: white;
-  line-height: 60px;
+  line-height: 30px;
 }
 
-/* line 156, ../../scss/style.scss */
+/* line 187, ../../scss/style.scss */
 a {
   text-decoration: none;
 }
 
-/* line 160, ../../scss/style.scss */
+/* line 191, ../../scss/style.scss */
 #gallery {
   width: 100%;
-  margin-top: 62px;
+  margin-top: 32px;
   padding-left: 2px;
   padding-right: 2px;
   margin-bottom: 2px;
 }
-/* line 167, ../../scss/style.scss */
-#gallery a:hover img {
-  -webkit-filter: blur(2px);
-  -moz-filter: blur(2px);
-  filter: blur(2px);
-}
 
-/* line 175, ../../scss/style.scss */
+/* line 199, ../../scss/style.scss */
 img {
   float: left;
   margin-left: 3px;
   margin-bottom: 3px;
 }
 
-/* line 181, ../../scss/style.scss */
+/* line 205, ../../scss/style.scss */
 #upload-form {
   position: fixed;
   top: 0px;
@@ -209,60 +227,60 @@ img {
   right: 0px;
 }
 
-/* line 189, ../../scss/style.scss */
+/* line 213, ../../scss/style.scss */
 .dz-preview {
   display: none;
 }
 
-/* line 193, ../../scss/style.scss */
+/* line 217, ../../scss/style.scss */
 .love {
   color: #e74c3c;
 }
 
-/* line 197, ../../scss/style.scss */
+/* line 221, ../../scss/style.scss */
 .my-galleries, .liked-galleries {
   clear: left;
   font-size: 2em;
   padding-left: 60px;
 }
-/* line 201, ../../scss/style.scss */
+/* line 225, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 2) > a, .liked-galleries li:nth-child(6n + 2) > a {
   color: #e74c3c;
 }
-/* line 204, ../../scss/style.scss */
+/* line 228, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 3) > a, .liked-galleries li:nth-child(6n + 3) > a {
   color: #e67e22;
 }
-/* line 207, ../../scss/style.scss */
+/* line 231, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 4) > a, .liked-galleries li:nth-child(6n + 4) > a {
   color: #f39c12;
 }
-/* line 210, ../../scss/style.scss */
+/* line 234, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 5) > a, .liked-galleries li:nth-child(6n + 5) > a {
   color: #f1c40f;
 }
-/* line 213, ../../scss/style.scss */
+/* line 237, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 6) > a, .liked-galleries li:nth-child(6n + 6) > a {
   color: #2ecc71;
 }
-/* line 216, ../../scss/style.scss */
+/* line 240, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 1) > a, .liked-galleries li:nth-child(6n + 1) > a {
   color: #3498db;
 }
-/* line 219, ../../scss/style.scss */
+/* line 243, ../../scss/style.scss */
 .my-galleries li.plus > a, .liked-galleries li.plus > a {
   color: black;
 }
-/* line 222, ../../scss/style.scss */
+/* line 246, ../../scss/style.scss */
 .my-galleries ul, .liked-galleries ul {
   display: block;
 }
-/* line 224, ../../scss/style.scss */
+/* line 248, ../../scss/style.scss */
 .my-galleries ul li, .liked-galleries ul li {
   padding-left: 0px;
   display: inline;
 }
-/* line 227, ../../scss/style.scss */
+/* line 251, ../../scss/style.scss */
 .my-galleries ul li a, .liked-galleries ul li a {
   background-color: white;
   display: inline;
@@ -282,12 +300,12 @@ img {
   -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
 }
-/* line 246, ../../scss/style.scss */
+/* line 270, ../../scss/style.scss */
 .my-galleries ul li a:after, .liked-galleries ul li a:after {
   content: attr(title);
   display: block;
 }
-/* line 250, ../../scss/style.scss */
+/* line 274, ../../scss/style.scss */
 .my-galleries ul li a img, .liked-galleries ul li a img {
   display: block;
   width: 200px;
@@ -300,7 +318,7 @@ img {
   line-height: 200px;
   background-color: #E7E7E7;
 }
-/* line 264, ../../scss/style.scss */
+/* line 288, ../../scss/style.scss */
 .my-galleries ul li:nth-child(1n) a:hover, .liked-galleries ul li:nth-child(1n) a:hover {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
@@ -311,19 +329,19 @@ img {
   position: relative;
   z-index: 5;
 }
-/* line 274, ../../scss/style.scss */
+/* line 298, ../../scss/style.scss */
 .my-galleries ul li a, .liked-galleries ul li a {
   -webkit-transform: rotate(-2deg);
   -moz-transform: rotate(-2deg);
   transform: rotate(-2deg);
 }
-/* line 279, ../../scss/style.scss */
+/* line 303, ../../scss/style.scss */
 .my-galleries ul li:nth-child(even) a, .liked-galleries ul li:nth-child(even) a {
   -webkit-transform: rotate(2deg);
   -moz-transform: rotate(2deg);
   transform: rotate(2deg);
 }
-/* line 284, ../../scss/style.scss */
+/* line 308, ../../scss/style.scss */
 .my-galleries ul li:nth-child(3n) a, .liked-galleries ul li:nth-child(3n) a {
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -331,7 +349,7 @@ img {
   position: relative;
   top: -5px;
 }
-/* line 291, ../../scss/style.scss */
+/* line 315, ../../scss/style.scss */
 .my-galleries ul li:nth-child(4n) a, .liked-galleries ul li:nth-child(4n) a {
   -webkit-transform: rotate(5deg);
   -moz-transform: rotate(5deg);
@@ -340,17 +358,17 @@ img {
   right: 5px;
 }
 
-/* line 301, ../../scss/style.scss */
+/* line 325, ../../scss/style.scss */
 .my-galleries {
   padding-top: 70px;
 }
 
-/* line 305, ../../scss/style.scss */
+/* line 329, ../../scss/style.scss */
 .rm-container.removing a:hover {
   opacity: 0.4;
   background-color: #2ecc71;
 }
-/* line 308, ../../scss/style.scss */
+/* line 332, ../../scss/style.scss */
 .rm-container.removing a:hover img {
   opacity: 0.4;
 }
@@ -371,9 +389,9 @@ img {
     opacity: 0;
   }
 }
-/* line 322, ../../scss/style.scss */
+/* line 346, ../../scss/style.scss */
 #alert {
-  position: absolute;
+  position: fixed;
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -382,7 +400,7 @@ img {
   opacity: 0;
   -webkit-transition: opacity 0.5s;
 }
-/* line 330, ../../scss/style.scss */
+/* line 354, ../../scss/style.scss */
 #alert .alert-txt {
   position: absolute;
   top: 0px;
@@ -395,52 +413,61 @@ img {
   text-align: center;
   color: white;
 }
-/* line 343, ../../scss/style.scss */
+/* line 367, ../../scss/style.scss */
 #alert.active {
   opacity: 1;
 }
-/* line 346, ../../scss/style.scss */
+/* line 370, ../../scss/style.scss */
 #alert.pinned {
   z-index: 99;
   background-color: #2ecc71;
 }
-/* line 349, ../../scss/style.scss */
+/* line 373, ../../scss/style.scss */
 #alert.pinned .alert-txt:before {
   content: "PINNED AS COVER!";
 }
-/* line 353, ../../scss/style.scss */
+/* line 377, ../../scss/style.scss */
+#alert.named {
+  z-index: 99;
+  background-color: #34495e;
+}
+/* line 380, ../../scss/style.scss */
+#alert.named .alert-txt:before {
+  content: "GALLERY RENAMED!";
+}
+/* line 384, ../../scss/style.scss */
 #alert.removed {
   z-index: 99;
   background-color: #f39c12;
 }
-/* line 356, ../../scss/style.scss */
+/* line 387, ../../scss/style.scss */
 #alert.removed .alert-txt:before {
   content: "PICTURE REMOVED!";
 }
-/* line 360, ../../scss/style.scss */
+/* line 391, ../../scss/style.scss */
 #alert.liked {
   z-index: 99;
   background-color: #e74c3c;
 }
-/* line 363, ../../scss/style.scss */
+/* line 394, ../../scss/style.scss */
 #alert.liked .alert-txt:before {
   font-family: 'Glyphicons Halflings';
   content: "\e005 ";
 }
-/* line 367, ../../scss/style.scss */
+/* line 398, ../../scss/style.scss */
 #alert.liked .alert-txt:after {
   content: " IT!";
 }
-/* line 371, ../../scss/style.scss */
+/* line 402, ../../scss/style.scss */
 #alert.unliked {
   z-index: 99;
   background-color: #e74c3c;
 }
-/* line 374, ../../scss/style.scss */
+/* line 405, ../../scss/style.scss */
 #alert.unliked .alert-txt:before {
   content: "UN-";
 }
-/* line 377, ../../scss/style.scss */
+/* line 408, ../../scss/style.scss */
 #alert.unliked .alert-txt:after {
   font-family: 'Glyphicons Halflings';
   content: "\e005 ";

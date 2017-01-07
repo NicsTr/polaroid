@@ -1,6 +1,5 @@
 
 var display_alert = function(cls) {
-    console.log(cls);
     $("#alert").addClass(cls);
     $("#alert").addClass("active");
     setTimeout(function() {

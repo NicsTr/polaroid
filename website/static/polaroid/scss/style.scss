@@ -1,7 +1,7 @@
 
 @import "fonts.scss";
 
-$hdr-size: 60px;
+$hdr-size: 30px;
 $hdr-size-big: 150px;
 $margin: 2px;
 
@@ -92,6 +92,11 @@ body header {
                 color: #2ecc71;
             }
         }
+        #name {
+            &.naming, &:hover {
+                color: #34495e;
+            }
+        }
     }
 }
 
@@ -123,30 +128,56 @@ body.gallery > header {
     left: 0px;
     right: 0px;
     height: $hdr-size;
-    background-color: black;
+    background-color: rgba(55, 55, 55, 0.6);
 
     border-style: solid;
-    border-width: 0px 0px 5px 0px;
-    border-color: white;
+    border-width: 0px 0px 0px 0px;
    
     #hdr-left {
+        position: absolute;
+        z-index: 2;
         float: left;
         margin-left: 50px;
         height: $hdr-size;
         h1 {
-            font-size: 1.5em;
+            font-size: 1em;
             margin: 0px;
             height: 100%;
             line-height: $hdr-size;
             #t-p, #t-d {
-                color: white;
+                // color: white;
             }
+        }
+    }
+
+    #hdr-center {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        height: $hdr-size;
+        line-height: $hdr-size;
+        text-align: center;
+        color: white;
+
+        input#naming {
+			width: 300px;
+            background-color: rgba(0,0,0,0);
+            text-align: center;
+
+    		border: none;
+    		outline: none;
+
+    		-webkit-box-shadow: none;
+    		-moz-box-shadow: none;
+    		box-shadow: none;
         }
     }
 
     #hdr-right {
         height: $hdr-size;
         a {
+            font-size: 0.6em;
             color: white;
             line-height: $hdr-size;
         }
@@ -159,17 +190,10 @@ a {
 
 #gallery {
     width: 100%;
-    margin-top: $hdr-size + $margin;
+    margin-top: $margin + $hdr_size;
     padding-left: $margin;
     padding-right: $margin;
     margin-bottom: $margin;
-    a:hover {
-        img {
-            -webkit-filter: blur(2px);
-               -moz-filter: blur(2px);
-                    filter: blur(2px);
-        }
-    }
 }
 
 img {
@@ -320,7 +344,7 @@ img {
     }
 
 #alert {
-    position: absolute;
+    position: fixed;
     top: 0px;
     bottom: 0px;
     left: 0px; 
@@ -348,6 +372,13 @@ img {
         background-color: #2ecc71; 
         .alert-txt:before {
             content: "PINNED AS COVER!";
+        }
+    }
+    &.named {
+        z-index: 99;
+        background-color: #34495e;
+        .alert-txt:before {
+            content: "GALLERY RENAMED!";
         }
     }
     &.removed {

@@ -5,14 +5,8 @@ var arrange_line = function(start, w) {
 
 var arrange_gallery = function() {
     var w = $("#gallery").width() - 4;
-    console.log(w);
     var ratios = new Array();
     $("#gallery > a > img").each(function() {
-        console.log($(this).width());
-        console.log($(this).outerWidth());
-        console.log($(this).prop("naturalWidth"));
-        console.log($(this).height());
-        console.log($(this).outerHeight());
         var r = ($(this).prop("naturalWidth")) / $(this).prop("naturalHeight");
         ratios.push(r);
     });
