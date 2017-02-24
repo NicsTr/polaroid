@@ -202,6 +202,20 @@ img {
     margin-bottom: 3px;
 }
 
+#padding {
+    display: inline-block;
+    height: 0px;
+    width: 0px;
+    margin-left: 3px;
+    margin-bottom: 3px;
+    overflow-y: hidden;
+}
+
+img.square {  
+    object-fit: cover;
+    margin: 0px;
+}
+
 #upload-form {
     position: fixed;
     top: 0px;
