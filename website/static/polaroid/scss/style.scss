@@ -3,7 +3,7 @@
 
 $hdr-size: 30px;
 $hdr-size-big: 150px;
-$margin: 2px;
+$margin: 5px;
 
 body {
     margin: 0px;
@@ -189,7 +189,6 @@ a {
 }
 
 #gallery {
-    width: 100%;
     margin-top: $margin + $hdr_size;
     padding-left: $margin;
     padding-right: $margin;
@@ -198,8 +197,7 @@ a {
 
 img {
     float: left;
-    margin-left: 3px;
-    margin-bottom: 3px;
+    margin: 2px;
 }
 
 #padding {

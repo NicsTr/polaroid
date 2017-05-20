@@ -1,6 +1,80 @@
 
+var max = function(a) {
+    var m = a[0];
+    for (var i = 1; i < a.length; i++)
+        if (m < a[i])
+            m = a[i];
+    return m;
+}
+
 var arrange_line = function(start, w) {
 
+}
+
+var linear_tab = function(seq, k) {
+    var n = seq.length;
+    var t = [];
+    var sub_t = [];
+    for (var j = 0; j < k; j++) {
+        sub_t.push(0);
+    }
+    for (var i = 0; i < n; i++) {
+        t.push(sub_t.slice());
+    }
+    sub_t.pop();
+    s = [];
+    for (var i = 0; i < n - 1; i++) {
+        s.push(sub_t.slice());
+    }
+    for (var i = 0; i < n; i++) {
+        if (i > 0)
+            t[i][0] = seq[i] + (t[i - 1][0]);
+        else
+            t[i][0] = seq[i];
+    }
+    for (var i = 0; i < k; i++) {
+        t[0][j] = seq[0];
+    }
+    for (var i = 1; i < n; i++) {
+        for (var j = 1; j < k; j++) {
+            var min_it;
+            var min_idx = -1;
+            for (var l = 0; l < i; l++) {
+                it = max([t[l][j-1], t[i][0] - t[l][0]]);
+                if (min_idx == -1 || it < min_it) {
+                    min_it = it;
+                    min_idx = l;
+                }
+            }
+            t[i][j] = min_it;
+            s[i-1][j-1] = min_idx;
+        }
+    }
+    return [t, s];
+}
+
+var linear_partition = function(seq, k) {
+    if (k <= 0) 
+        return [];
+    var n = seq.length - 1;
+    if (k > n) {
+        return seq.map(x => [x]);
+    }
+    ts = linear_tab(seq, k);
+    t = ts[0];
+    s = ts[1];
+    k -= 2;
+    ans = [];
+    while (k >= 0) {
+        var tab = [];
+        for (var i = s[n-1][k] + 1; i < n + 1; i++) {
+            tab.push(seq[i]);
+        }
+        ans = [tab].concat(ans);
+        n = s[n-1][k];
+        k -= 1;
+    }
+    return [seq.slice(0, n+1)].concat(ans);
 }
 
 var arrange_gallery = function(gallery, h_min, h_max) {
@@ -66,7 +140,38 @@ function choose(choices) {
 }
 
 var arrange_all = function() {
+    console.log(linear_partition([9,2,6,3,8,5,8,1,7,3,4], 4));
     $("#padding").html();
+    var ideal_h = window.innerHeight / 2.3;
+    var sum_width = 0;
+    var ratio = [];
+    $("a > img", gallery).each(function() {
+        var r = ($(this).prop("naturalWidth")) / $(this).prop("naturalHeight");
+        ratio.push(r);
+        sum_width += (r * ideal_h);
+    });
+    var partition = linear_partition(ratio, Math.round(sum_width/$(window).width()));
+    console.log(partition);
+    var sum_ratio = 0;
+    var img_idx = 0;
+    for (var i = 0; i < partition.length; i++) {
+        sum_ratio = 0;
+        for (var j = 0; j < partition[i].length; j++) {
+            sum_ratio += ratio[img_idx + j];
+        }
+        for (var j = 0; j < partition[i].length; j++) {
+            var img = $("a > img", gallery).get(img_idx);
+            img.width = ($(window).width() - 10 - 4*partition[i].length) / sum_ratio * ratio[img_idx];
+            img.height = ($(window).width() - 10 - 4*partition[i].length) / sum_ratio;
+            img_idx += 1;
+        }
+    }
+    return;
+    for (var i = 0; i < partition.length; i++) {
+        var img = $("a > img", gallery).get(i);
+        w_row += $("a > img", gallery).get(i).width + 3;
+    }
+    return;
     var h_min = window.innerHeight / 10.0;
     var h_max = window.innerHeight / 2.0;
     var [h, w_pad] = arrange_gallery($("#gallery"), h_min, h_max);

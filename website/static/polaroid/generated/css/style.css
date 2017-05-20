@@ -204,21 +204,19 @@ a {
 
 /* line 191, ../../scss/style.scss */
 #gallery {
-  width: 100%;
-  margin-top: 32px;
-  padding-left: 2px;
-  padding-right: 2px;
-  margin-bottom: 2px;
+  margin-top: 35px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 5px;
 }
 
-/* line 199, ../../scss/style.scss */
+/* line 198, ../../scss/style.scss */
 img {
   float: left;
-  margin-left: 3px;
-  margin-bottom: 3px;
+  margin: 2px;
 }
 
-/* line 205, ../../scss/style.scss */
+/* line 203, ../../scss/style.scss */
 #padding {
   display: inline-block;
   height: 0px;
@@ -228,13 +226,13 @@ img {
   overflow-y: hidden;
 }
 
-/* line 214, ../../scss/style.scss */
+/* line 212, ../../scss/style.scss */
 img.square {
   object-fit: cover;
   margin: 0px;
 }
 
-/* line 219, ../../scss/style.scss */
+/* line 217, ../../scss/style.scss */
 #upload-form {
   position: fixed;
   top: 0px;
@@ -243,60 +241,60 @@ img.square {
   right: 0px;
 }
 
-/* line 227, ../../scss/style.scss */
+/* line 225, ../../scss/style.scss */
 .dz-preview {
   display: none;
 }
 
-/* line 231, ../../scss/style.scss */
+/* line 229, ../../scss/style.scss */
 .love {
   color: #e74c3c;
 }
 
-/* line 235, ../../scss/style.scss */
+/* line 233, ../../scss/style.scss */
 .my-galleries, .liked-galleries {
   clear: left;
   font-size: 2em;
   padding-left: 60px;
 }
-/* line 239, ../../scss/style.scss */
+/* line 237, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 2) > a, .liked-galleries li:nth-child(6n + 2) > a {
   color: #e74c3c;
 }
-/* line 242, ../../scss/style.scss */
+/* line 240, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 3) > a, .liked-galleries li:nth-child(6n + 3) > a {
   color: #e67e22;
 }
-/* line 245, ../../scss/style.scss */
+/* line 243, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 4) > a, .liked-galleries li:nth-child(6n + 4) > a {
   color: #f39c12;
 }
-/* line 248, ../../scss/style.scss */
+/* line 246, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 5) > a, .liked-galleries li:nth-child(6n + 5) > a {
   color: #f1c40f;
 }
-/* line 251, ../../scss/style.scss */
+/* line 249, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 6) > a, .liked-galleries li:nth-child(6n + 6) > a {
   color: #2ecc71;
 }
-/* line 254, ../../scss/style.scss */
+/* line 252, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 1) > a, .liked-galleries li:nth-child(6n + 1) > a {
   color: #3498db;
 }
-/* line 257, ../../scss/style.scss */
+/* line 255, ../../scss/style.scss */
 .my-galleries li.plus > a, .liked-galleries li.plus > a {
   color: black;
 }
-/* line 260, ../../scss/style.scss */
+/* line 258, ../../scss/style.scss */
 .my-galleries ul, .liked-galleries ul {
   display: block;
 }
-/* line 262, ../../scss/style.scss */
+/* line 260, ../../scss/style.scss */
 .my-galleries ul li, .liked-galleries ul li {
   padding-left: 0px;
   display: inline;
 }
-/* line 265, ../../scss/style.scss */
+/* line 263, ../../scss/style.scss */
 .my-galleries ul li a, .liked-galleries ul li a {
   background-color: white;
   display: inline;
@@ -316,12 +314,12 @@ img.square {
   -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
 }
-/* line 284, ../../scss/style.scss */
+/* line 282, ../../scss/style.scss */
 .my-galleries ul li a:after, .liked-galleries ul li a:after {
   content: attr(title);
   display: block;
 }
-/* line 288, ../../scss/style.scss */
+/* line 286, ../../scss/style.scss */
 .my-galleries ul li a img, .liked-galleries ul li a img {
   display: block;
   width: 200px;
@@ -334,7 +332,7 @@ img.square {
   line-height: 200px;
   background-color: #E7E7E7;
 }
-/* line 302, ../../scss/style.scss */
+/* line 300, ../../scss/style.scss */
 .my-galleries ul li:nth-child(1n) a:hover, .liked-galleries ul li:nth-child(1n) a:hover {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
@@ -345,19 +343,19 @@ img.square {
   position: relative;
   z-index: 5;
 }
-/* line 312, ../../scss/style.scss */
+/* line 310, ../../scss/style.scss */
 .my-galleries ul li a, .liked-galleries ul li a {
   -webkit-transform: rotate(-2deg);
   -moz-transform: rotate(-2deg);
   transform: rotate(-2deg);
 }
-/* line 317, ../../scss/style.scss */
+/* line 315, ../../scss/style.scss */
 .my-galleries ul li:nth-child(even) a, .liked-galleries ul li:nth-child(even) a {
   -webkit-transform: rotate(2deg);
   -moz-transform: rotate(2deg);
   transform: rotate(2deg);
 }
-/* line 322, ../../scss/style.scss */
+/* line 320, ../../scss/style.scss */
 .my-galleries ul li:nth-child(3n) a, .liked-galleries ul li:nth-child(3n) a {
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -365,7 +363,7 @@ img.square {
   position: relative;
   top: -5px;
 }
-/* line 329, ../../scss/style.scss */
+/* line 327, ../../scss/style.scss */
 .my-galleries ul li:nth-child(4n) a, .liked-galleries ul li:nth-child(4n) a {
   -webkit-transform: rotate(5deg);
   -moz-transform: rotate(5deg);
@@ -374,17 +372,17 @@ img.square {
   right: 5px;
 }
 
-/* line 339, ../../scss/style.scss */
+/* line 337, ../../scss/style.scss */
 .my-galleries {
   padding-top: 70px;
 }
 
-/* line 343, ../../scss/style.scss */
+/* line 341, ../../scss/style.scss */
 .rm-container.removing a:hover {
   opacity: 0.4;
   background-color: #2ecc71;
 }
-/* line 346, ../../scss/style.scss */
+/* line 344, ../../scss/style.scss */
 .rm-container.removing a:hover img {
   opacity: 0.4;
 }
@@ -405,7 +403,7 @@ img.square {
     opacity: 0;
   }
 }
-/* line 360, ../../scss/style.scss */
+/* line 358, ../../scss/style.scss */
 #alert {
   position: fixed;
   top: 0px;
@@ -416,7 +414,7 @@ img.square {
   opacity: 0;
   -webkit-transition: opacity 0.5s;
 }
-/* line 368, ../../scss/style.scss */
+/* line 366, ../../scss/style.scss */
 #alert .alert-txt {
   position: absolute;
   top: 0px;
@@ -429,61 +427,61 @@ img.square {
   text-align: center;
   color: white;
 }
-/* line 381, ../../scss/style.scss */
+/* line 379, ../../scss/style.scss */
 #alert.active {
   opacity: 1;
 }
-/* line 384, ../../scss/style.scss */
+/* line 382, ../../scss/style.scss */
 #alert.pinned {
   z-index: 99;
   background-color: #2ecc71;
 }
-/* line 387, ../../scss/style.scss */
+/* line 385, ../../scss/style.scss */
 #alert.pinned .alert-txt:before {
   content: "PINNED AS COVER!";
 }
-/* line 391, ../../scss/style.scss */
+/* line 389, ../../scss/style.scss */
 #alert.named {
   z-index: 99;
   background-color: #34495e;
 }
-/* line 394, ../../scss/style.scss */
+/* line 392, ../../scss/style.scss */
 #alert.named .alert-txt:before {
   content: "GALLERY RENAMED!";
 }
-/* line 398, ../../scss/style.scss */
+/* line 396, ../../scss/style.scss */
 #alert.removed {
   z-index: 99;
   background-color: #f39c12;
 }
-/* line 401, ../../scss/style.scss */
+/* line 399, ../../scss/style.scss */
 #alert.removed .alert-txt:before {
   content: "PICTURE REMOVED!";
 }
-/* line 405, ../../scss/style.scss */
+/* line 403, ../../scss/style.scss */
 #alert.liked {
   z-index: 99;
   background-color: #e74c3c;
 }
-/* line 408, ../../scss/style.scss */
+/* line 406, ../../scss/style.scss */
 #alert.liked .alert-txt:before {
   font-family: 'Glyphicons Halflings';
   content: "\e005 ";
 }
-/* line 412, ../../scss/style.scss */
+/* line 410, ../../scss/style.scss */
 #alert.liked .alert-txt:after {
   content: " IT!";
 }
-/* line 416, ../../scss/style.scss */
+/* line 414, ../../scss/style.scss */
 #alert.unliked {
   z-index: 99;
   background-color: #e74c3c;
 }
-/* line 419, ../../scss/style.scss */
+/* line 417, ../../scss/style.scss */
 #alert.unliked .alert-txt:before {
   content: "UN-";
 }
-/* line 422, ../../scss/style.scss */
+/* line 420, ../../scss/style.scss */
 #alert.unliked .alert-txt:after {
   font-family: 'Glyphicons Halflings';
   content: "\e005 ";
