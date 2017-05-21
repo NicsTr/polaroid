@@ -58,7 +58,7 @@ var linear_partition = function(seq, k) {
         return [];
     var n = seq.length - 1;
     if (k > n) {
-        return seq.map(x => [x]);
+        return seq.map(function(x) { return [x]; });
     }
     ts = linear_tab(seq, k);
     t = ts[0];
