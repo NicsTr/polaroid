@@ -10,7 +10,6 @@ var get_cover = function(el) {
             var data = xhr.responseText.split(";");
             var gid = data[0];
             var mid = data[1];
-            console.log(gid, mid);
             $("img", "." + gid).attr("src", "img/" + gid + "/" + mid + ".jpg");
         }
     });

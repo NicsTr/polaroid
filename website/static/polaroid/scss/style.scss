@@ -82,6 +82,11 @@ body header {
                 color: #e74c3c;
             }
         }
+        #crop {
+            &.cropping, &:hover {
+                color: #8e44ad;
+            }
+        }
         #remove {
             &.removing, &:hover {
                 color: #f39c12; 
@@ -384,6 +389,13 @@ img.square {
         background-color: #2ecc71; 
         .alert-txt:before {
             content: "PINNED AS COVER!";
+        }
+    }
+    &.cropped {
+        z-index: 99; 
+        background-color: #8e44ad;
+        .alert-txt:before {
+            content: "PICTURE CROPPED";
         }
     }
     &.named {

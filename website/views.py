@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
+from django.core.files.base import ContentFile
 from django.views.decorators.csrf import csrf_exempt
 
 from website.models import Gallery, Image
@@ -130,3 +131,11 @@ def register(request):
         ctxt["reg_form"] = reg_form
         return render(request, tpl, ctxt)
 
+
+def crop(request, mid):
+    img = Image.objects.get(id=mid)
+    if img.owner != request.user:
+        return HttpResponse("KO")
+    img.crop(16.0/9.0)
+    img.save()
+    return HttpResponse("OK;" + str(img.id))

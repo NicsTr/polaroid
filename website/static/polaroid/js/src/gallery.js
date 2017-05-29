@@ -140,7 +140,6 @@ function choose(choices) {
 }
 
 var arrange_all = function() {
-    console.log(linear_partition([9,2,6,3,8,5,8,1,7,3,4], 4));
     $("#padding").html();
     var ideal_h = window.innerHeight / 2.3;
     var sum_width = 0;
@@ -151,7 +150,6 @@ var arrange_all = function() {
         sum_width += (r * ideal_h);
     });
     var partition = linear_partition(ratio, Math.round(sum_width/$(window).width()));
-    console.log(partition);
     var sum_ratio = 0;
     var img_idx = 0;
     for (var i = 0; i < partition.length; i++) {

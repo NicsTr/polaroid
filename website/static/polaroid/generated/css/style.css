@@ -100,45 +100,49 @@ body header #hdr-right #like.liked, body header #hdr-right #like:hover {
   color: #e74c3c;
 }
 /* line 86, ../../scss/style.scss */
+body header #hdr-right #crop.cropping, body header #hdr-right #crop:hover {
+  color: #8e44ad;
+}
+/* line 91, ../../scss/style.scss */
 body header #hdr-right #remove.removing, body header #hdr-right #remove:hover {
   color: #f39c12;
 }
-/* line 91, ../../scss/style.scss */
+/* line 96, ../../scss/style.scss */
 body header #hdr-right #pin.pinning, body header #hdr-right #pin:hover {
   color: #2ecc71;
 }
-/* line 96, ../../scss/style.scss */
+/* line 101, ../../scss/style.scss */
 body header #hdr-right #name.naming, body header #hdr-right #name:hover {
   color: #34495e;
 }
 
-/* line 103, ../../scss/style.scss */
+/* line 108, ../../scss/style.scss */
 body:not(.gallery) header {
   width: 100%;
   height: 150px;
 }
-/* line 106, ../../scss/style.scss */
+/* line 111, ../../scss/style.scss */
 body:not(.gallery) header #hdr-left {
   float: left;
   margin-left: 50px;
   height: 150px;
 }
-/* line 110, ../../scss/style.scss */
+/* line 115, ../../scss/style.scss */
 body:not(.gallery) header #hdr-left h1 {
   margin: 0px;
   line-height: 150px;
   height: 100%;
 }
-/* line 117, ../../scss/style.scss */
+/* line 122, ../../scss/style.scss */
 body:not(.gallery) header #hdr-right {
   margin-top: 40px;
 }
-/* line 119, ../../scss/style.scss */
+/* line 124, ../../scss/style.scss */
 body:not(.gallery) header #hdr-right a {
   color: black;
 }
 
-/* line 125, ../../scss/style.scss */
+/* line 130, ../../scss/style.scss */
 body.gallery > header {
   position: fixed;
   top: 0px;
@@ -149,7 +153,7 @@ body.gallery > header {
   border-style: solid;
   border-width: 0px 0px 0px 0px;
 }
-/* line 136, ../../scss/style.scss */
+/* line 141, ../../scss/style.scss */
 body.gallery > header #hdr-left {
   position: absolute;
   z-index: 2;
@@ -157,14 +161,14 @@ body.gallery > header #hdr-left {
   margin-left: 50px;
   height: 30px;
 }
-/* line 142, ../../scss/style.scss */
+/* line 147, ../../scss/style.scss */
 body.gallery > header #hdr-left h1 {
   font-size: 1em;
   margin: 0px;
   height: 100%;
   line-height: 30px;
 }
-/* line 153, ../../scss/style.scss */
+/* line 158, ../../scss/style.scss */
 body.gallery > header #hdr-center {
   position: absolute;
   top: 0px;
@@ -175,7 +179,7 @@ body.gallery > header #hdr-center {
   text-align: center;
   color: white;
 }
-/* line 163, ../../scss/style.scss */
+/* line 168, ../../scss/style.scss */
 body.gallery > header #hdr-center input#naming {
   width: 300px;
   background-color: transparent;
@@ -186,23 +190,23 @@ body.gallery > header #hdr-center input#naming {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 177, ../../scss/style.scss */
+/* line 182, ../../scss/style.scss */
 body.gallery > header #hdr-right {
   height: 30px;
 }
-/* line 179, ../../scss/style.scss */
+/* line 184, ../../scss/style.scss */
 body.gallery > header #hdr-right a {
   font-size: 0.6em;
   color: white;
   line-height: 30px;
 }
 
-/* line 187, ../../scss/style.scss */
+/* line 192, ../../scss/style.scss */
 a {
   text-decoration: none;
 }
 
-/* line 191, ../../scss/style.scss */
+/* line 196, ../../scss/style.scss */
 #gallery {
   margin-top: 35px;
   padding-left: 5px;
@@ -210,13 +214,13 @@ a {
   margin-bottom: 5px;
 }
 
-/* line 198, ../../scss/style.scss */
+/* line 203, ../../scss/style.scss */
 img {
   float: left;
   margin: 2px;
 }
 
-/* line 203, ../../scss/style.scss */
+/* line 208, ../../scss/style.scss */
 #padding {
   display: inline-block;
   height: 0px;
@@ -226,13 +230,13 @@ img {
   overflow-y: hidden;
 }
 
-/* line 212, ../../scss/style.scss */
+/* line 217, ../../scss/style.scss */
 img.square {
   object-fit: cover;
   margin: 0px;
 }
 
-/* line 217, ../../scss/style.scss */
+/* line 222, ../../scss/style.scss */
 #upload-form {
   position: fixed;
   top: 0px;
@@ -241,60 +245,60 @@ img.square {
   right: 0px;
 }
 
-/* line 225, ../../scss/style.scss */
+/* line 230, ../../scss/style.scss */
 .dz-preview {
   display: none;
 }
 
-/* line 229, ../../scss/style.scss */
+/* line 234, ../../scss/style.scss */
 .love {
   color: #e74c3c;
 }
 
-/* line 233, ../../scss/style.scss */
+/* line 238, ../../scss/style.scss */
 .my-galleries, .liked-galleries {
   clear: left;
   font-size: 2em;
   padding-left: 60px;
 }
-/* line 237, ../../scss/style.scss */
+/* line 242, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 2) > a, .liked-galleries li:nth-child(6n + 2) > a {
   color: #e74c3c;
 }
-/* line 240, ../../scss/style.scss */
+/* line 245, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 3) > a, .liked-galleries li:nth-child(6n + 3) > a {
   color: #e67e22;
 }
-/* line 243, ../../scss/style.scss */
+/* line 248, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 4) > a, .liked-galleries li:nth-child(6n + 4) > a {
   color: #f39c12;
 }
-/* line 246, ../../scss/style.scss */
+/* line 251, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 5) > a, .liked-galleries li:nth-child(6n + 5) > a {
   color: #f1c40f;
 }
-/* line 249, ../../scss/style.scss */
+/* line 254, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 6) > a, .liked-galleries li:nth-child(6n + 6) > a {
   color: #2ecc71;
 }
-/* line 252, ../../scss/style.scss */
+/* line 257, ../../scss/style.scss */
 .my-galleries li:nth-child(6n + 1) > a, .liked-galleries li:nth-child(6n + 1) > a {
   color: #3498db;
 }
-/* line 255, ../../scss/style.scss */
+/* line 260, ../../scss/style.scss */
 .my-galleries li.plus > a, .liked-galleries li.plus > a {
   color: black;
 }
-/* line 258, ../../scss/style.scss */
+/* line 263, ../../scss/style.scss */
 .my-galleries ul, .liked-galleries ul {
   display: block;
 }
-/* line 260, ../../scss/style.scss */
+/* line 265, ../../scss/style.scss */
 .my-galleries ul li, .liked-galleries ul li {
   padding-left: 0px;
   display: inline;
 }
-/* line 263, ../../scss/style.scss */
+/* line 268, ../../scss/style.scss */
 .my-galleries ul li a, .liked-galleries ul li a {
   background-color: white;
   display: inline;
@@ -314,12 +318,12 @@ img.square {
   -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
 }
-/* line 282, ../../scss/style.scss */
+/* line 287, ../../scss/style.scss */
 .my-galleries ul li a:after, .liked-galleries ul li a:after {
   content: attr(title);
   display: block;
 }
-/* line 286, ../../scss/style.scss */
+/* line 291, ../../scss/style.scss */
 .my-galleries ul li a img, .liked-galleries ul li a img {
   display: block;
   width: 200px;
@@ -332,7 +336,7 @@ img.square {
   line-height: 200px;
   background-color: #E7E7E7;
 }
-/* line 300, ../../scss/style.scss */
+/* line 305, ../../scss/style.scss */
 .my-galleries ul li:nth-child(1n) a:hover, .liked-galleries ul li:nth-child(1n) a:hover {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
@@ -343,19 +347,19 @@ img.square {
   position: relative;
   z-index: 5;
 }
-/* line 310, ../../scss/style.scss */
+/* line 315, ../../scss/style.scss */
 .my-galleries ul li a, .liked-galleries ul li a {
   -webkit-transform: rotate(-2deg);
   -moz-transform: rotate(-2deg);
   transform: rotate(-2deg);
 }
-/* line 315, ../../scss/style.scss */
+/* line 320, ../../scss/style.scss */
 .my-galleries ul li:nth-child(even) a, .liked-galleries ul li:nth-child(even) a {
   -webkit-transform: rotate(2deg);
   -moz-transform: rotate(2deg);
   transform: rotate(2deg);
 }
-/* line 320, ../../scss/style.scss */
+/* line 325, ../../scss/style.scss */
 .my-galleries ul li:nth-child(3n) a, .liked-galleries ul li:nth-child(3n) a {
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -363,7 +367,7 @@ img.square {
   position: relative;
   top: -5px;
 }
-/* line 327, ../../scss/style.scss */
+/* line 332, ../../scss/style.scss */
 .my-galleries ul li:nth-child(4n) a, .liked-galleries ul li:nth-child(4n) a {
   -webkit-transform: rotate(5deg);
   -moz-transform: rotate(5deg);
@@ -372,17 +376,17 @@ img.square {
   right: 5px;
 }
 
-/* line 337, ../../scss/style.scss */
+/* line 342, ../../scss/style.scss */
 .my-galleries {
   padding-top: 70px;
 }
 
-/* line 341, ../../scss/style.scss */
+/* line 346, ../../scss/style.scss */
 .rm-container.removing a:hover {
   opacity: 0.4;
   background-color: #2ecc71;
 }
-/* line 344, ../../scss/style.scss */
+/* line 349, ../../scss/style.scss */
 .rm-container.removing a:hover img {
   opacity: 0.4;
 }
@@ -403,7 +407,7 @@ img.square {
     opacity: 0;
   }
 }
-/* line 358, ../../scss/style.scss */
+/* line 363, ../../scss/style.scss */
 #alert {
   position: fixed;
   top: 0px;
@@ -414,7 +418,7 @@ img.square {
   opacity: 0;
   -webkit-transition: opacity 0.5s;
 }
-/* line 366, ../../scss/style.scss */
+/* line 371, ../../scss/style.scss */
 #alert .alert-txt {
   position: absolute;
   top: 0px;
@@ -427,61 +431,70 @@ img.square {
   text-align: center;
   color: white;
 }
-/* line 379, ../../scss/style.scss */
+/* line 384, ../../scss/style.scss */
 #alert.active {
   opacity: 1;
 }
-/* line 382, ../../scss/style.scss */
+/* line 387, ../../scss/style.scss */
 #alert.pinned {
   z-index: 99;
   background-color: #2ecc71;
 }
-/* line 385, ../../scss/style.scss */
+/* line 390, ../../scss/style.scss */
 #alert.pinned .alert-txt:before {
   content: "PINNED AS COVER!";
 }
-/* line 389, ../../scss/style.scss */
+/* line 394, ../../scss/style.scss */
+#alert.cropped {
+  z-index: 99;
+  background-color: #8e44ad;
+}
+/* line 397, ../../scss/style.scss */
+#alert.cropped .alert-txt:before {
+  content: "PICTURE CROPPED";
+}
+/* line 401, ../../scss/style.scss */
 #alert.named {
   z-index: 99;
   background-color: #34495e;
 }
-/* line 392, ../../scss/style.scss */
+/* line 404, ../../scss/style.scss */
 #alert.named .alert-txt:before {
   content: "GALLERY RENAMED!";
 }
-/* line 396, ../../scss/style.scss */
+/* line 408, ../../scss/style.scss */
 #alert.removed {
   z-index: 99;
   background-color: #f39c12;
 }
-/* line 399, ../../scss/style.scss */
+/* line 411, ../../scss/style.scss */
 #alert.removed .alert-txt:before {
   content: "PICTURE REMOVED!";
 }
-/* line 403, ../../scss/style.scss */
+/* line 415, ../../scss/style.scss */
 #alert.liked {
   z-index: 99;
   background-color: #e74c3c;
 }
-/* line 406, ../../scss/style.scss */
+/* line 418, ../../scss/style.scss */
 #alert.liked .alert-txt:before {
   font-family: 'Glyphicons Halflings';
   content: "\e005 ";
 }
-/* line 410, ../../scss/style.scss */
+/* line 422, ../../scss/style.scss */
 #alert.liked .alert-txt:after {
   content: " IT!";
 }
-/* line 414, ../../scss/style.scss */
+/* line 426, ../../scss/style.scss */
 #alert.unliked {
   z-index: 99;
   background-color: #e74c3c;
 }
-/* line 417, ../../scss/style.scss */
+/* line 429, ../../scss/style.scss */
 #alert.unliked .alert-txt:before {
   content: "UN-";
 }
-/* line 420, ../../scss/style.scss */
+/* line 432, ../../scss/style.scss */
 #alert.unliked .alert-txt:after {
   font-family: 'Glyphicons Halflings';
   content: "\e005 ";

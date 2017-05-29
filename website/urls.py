@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^gl/(?P<gid>[-A-Za-z0-9_]+)$', views.gallery, name="gallery"),
     url(r'^rm/gl/(?P<gid>[-A-Za-z0-9_]+)$', views.remove_gallery, name="remove_gl"),
     url(r'^rm/img/(?P<mid>[-A-Za-z0-9_]+)$', views.remove_img, name="remove_img"),
+    url(r'^crop/img/(?P<mid>[-A-Za-z0-9_]+)$', views.crop, name="crop"),
     url(r'^cover/(?P<gid>[-A-Za-z0-9_]+)$', views.cover_gallery, name="cover"),
     url(r'^name/(?P<gid>[-A-Za-z0-9_]+)$', views.name_gallery, name="name"),
     url(r'^cover/set/(?P<gid>[-A-Za-z0-9_]+)/(?P<mid>[-A-Za-z0-9_]+)$', views.set_cover_gallery, name="set_cover"),

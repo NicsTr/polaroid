@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 import os 
+from PIL import Image as PILImage
 
 from django.db import models
 from django.conf import settings
@@ -33,3 +34,14 @@ class Image(RandomPrimaryIdModel):
     gl = models.ForeignKey('Gallery', null=True)
     owner = models.ForeignKey(User)
 
+    def crop(self, r):
+        for img in [self.path, self.thumb]:
+            im = PILImage.open(img)
+            cropped = im.copy()
+            im.close()
+            h, w = cropped.height, cropped.width
+            if h < w:
+                nh = w / r
+                p = int((h - nh) / 2)
+                cropped = cropped.crop((0, p, w, h - p))
+            cropped.save(str(img), "JPEG")
