@@ -26,7 +26,7 @@
 {% block content %}
 
 <input type="hidden" id="gid" value="{{ gal.id }}">
-<div id="gallery" class="rm-container">
+<div id="gallery" style="visibility: hidden" class="rm-container">
     {% for img in imgs %}
         <a href="/img/{{ gal.id }}/{{ img.id }}.jpg" class="img">
             <img src="/img/{{ gal.id }}/{{ img.id }}-small.jpg" alt="void" data-id="{{ img.id }}" />
@@ -46,7 +46,7 @@
   <div class="carousel-inner">
     {% for img in imgs %}
         <div class="carousel-item" data-img="{{img.id}}">
-          <img class="d-block w-100" src="" data-src="/img/{{ gal.id }}/{{ img.id }}.jpg" alt="void">
+          <img class="d-block w-100" src="" data-src="/img/{{ gal.id }}/{{ img.id }}-large.jpg" alt="void">
         </div>
     {% endfor %}
   </div>

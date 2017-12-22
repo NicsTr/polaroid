@@ -164,6 +164,7 @@ var arrange_all = function() {
             img_idx += 1;
         }
     }
+    $("#gallery").attr("style", "");
     return;
     for (var i = 0; i < partition.length; i++) {
         var img = $("a > img", gallery).get(i);

@@ -28,6 +28,7 @@ class Gallery(RandomPrimaryIdModel):
 
 class Image(RandomPrimaryIdModel):
     path = models.ImageField(blank=True, null=True)
+    large = models.ImageField(blank=True, null=True)
     thumb = models.ImageField(blank=True, null=True)
     caption = models.CharField(max_length=1024, null=True, blank=True, default="")
     uploaded = models.DateTimeField(auto_now_add=True)
