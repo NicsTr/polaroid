@@ -488,3 +488,36 @@ form input[type=submit]:hover {
   cursor: pointer;
   color: black;
 }
+
+/* line 446, ../../scss/style.scss */
+.hidden {
+  display: none;
+}
+
+/* line 450, ../../scss/style.scss */
+.carousel {
+  position: fixed;
+  top: 35px;
+  bottom: 6px;
+  left: 5px;
+  right: 6px;
+  overflow: hidden;
+}
+/* line 458, ../../scss/style.scss */
+.carousel .carousel-inner {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+/* line 464, ../../scss/style.scss */
+.carousel .carousel-inner .carousel-item {
+  height: 100%;
+}
+/* line 467, ../../scss/style.scss */
+.carousel .carousel-inner img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

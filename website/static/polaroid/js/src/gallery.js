@@ -96,8 +96,8 @@ var arrange_gallery = function(gallery, h_min, h_max) {
             h = (w - (n_img - first) * 3) / sum_r;
         }
         if (h > h_max || h < h_min) {
-            h = 600;
-            best_h = 600;
+            h = 400;
+            best_h = 400;
             best_gcd = 0;
             do {
                 h--;
@@ -111,7 +111,7 @@ var arrange_gallery = function(gallery, h_min, h_max) {
                     best_h = h; 
                     best_gcd = g;
                 }
-            } while (h > 100);
+            } while (h > 60);
             h = best_h;
         }
         w_row = 0;
@@ -149,7 +149,7 @@ var arrange_all = function() {
         ratio.push(r);
         sum_width += (r * ideal_h);
     });
-    var partition = linear_partition(ratio, Math.round(sum_width/$(window).width()));
+    var partition = linear_partition(ratio, Math.round(sum_width*0.8/($(window).width())));
     var sum_ratio = 0;
     var img_idx = 0;
     for (var i = 0; i < partition.length; i++) {
@@ -171,7 +171,7 @@ var arrange_all = function() {
     }
     return;
     var h_min = window.innerHeight / 10.0;
-    var h_max = window.innerHeight / 2.0;
+    var h_max = window.innerHeight / 5.0;
     var [h, w_pad] = arrange_gallery($("#gallery"), h_min, h_max);
     /* Compute gap on last row */
     if (w_pad > 0) {
