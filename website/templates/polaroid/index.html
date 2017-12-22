@@ -7,28 +7,32 @@
     <script src="{% static 'polaroid/js/src/name.js' %}" type="text/javascript"></script>
 {% endblock %}
 
-{% block hdr-right %}
-    {% if user.is_authenticated and galleries|length > 0 %}
-        <a href="#" id="remove"><span class="glyphicon glyphicon-trash"></span></a>
-    {% endif %}
-{% endblock %}
-
 {% block content %}
 
-<div class="liked-galleries rm-container">
-    Galleries i <span class="glyphicon glyphicon-heart love"></span>:
-    <ul id="liked">
-    </ul>
+<div class="my-galleries rm-container">
+    <nav aria-label="breadcrumb" role="navigation">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">my galleries</li>
+      </ol>
+    </nav>
+    <div>
+        <a class="plus" title="NEW GALLERY" href="{% url 'create' %}">+</a> 
+        {% for gal in galleries %}
+        <a title="{% if gal.name != None and gal.name != "" %}{{ gal.name }}{% else %}{{ gal.id }}{% endif %}" data-id="{{ gal.id }}" href="{% url 'gallery' gal.id %}" class="{{ gal.id }}"><img src=""></a>
+        {% endfor %}
+    </div>
 </div>
 
-<div class="my-galleries rm-container">
-    My galleries:
-    <ul>
-        <li class="plus"><a title="NEW GALLERY" href="{% url 'create' %}"><img src="" alt="+"></a></li> 
-        {% for gal in galleries %}
-        <li class="{{ gal.id }}"><a title="{% if gal.name != None and gal.name != "" %}{{ gal.name }}{% else %}{{ gal.id }}{% endif %}" data-id="{{ gal.id }}" href="{% url 'gallery' gal.id %}"><img src=""></a></li>
-        {% endfor %}
-    </ul>
+<div class="liked-galleries rm-container">
+    <nav aria-label="breadcrumb" role="navigation">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">
+            galleries i kiffe<span class="glyphicon glyphicon-heart love"></span>
+        </li>
+      </ol>
+    </nav>
+    <div id="liked">
+    </div>
 </div>
 
 {% endblock %}
@@ -38,16 +42,21 @@
         var liked = Cookies.get("liked").split(";");
         for (i = 0; i < liked.length; i++) {
             if (liked[i] != "" )
-            $("#liked").append("<li class=\"" + liked[i] + "\"><a title=\"" + liked[i] + "\" data-id=\"" + liked[i] + "\" href=\"/gl/" + liked[i] + "\"><img src=\"\"></a></li>");
+            $("#liked").append("<a title=\"" + liked[i] + "\" data-id=\"" + liked[i] + "\" href=\"/gl/" + liked[i] + "\" class=\"" + liked[i] + "\"><img src=\"\"></a>");
         }   
         activate_rm();
-        $(".my-galleries li a").each(function() {
+        $(".my-galleries a").each(function() {
             get_cover(this);
         });
-        $(".liked-galleries li a").each(function() {
+        $(".liked-galleries a").each(function() {
             get_cover(this);
             get_name(this);
         });
     });
 {% endblock %}
 
+{% block footer %}
+    {% if user.is_authenticated and galleries|length > 0 %}
+    <!-- <a href="#" id="remove">delete a gallery</a> -->
+    {% endif %}
+{% endblock %}

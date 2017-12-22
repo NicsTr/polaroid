@@ -3,11 +3,20 @@
 {% block bodyclass %}no-hdr{% endblock %}
 
 {% block content %}
+    <nav aria-label="breadcrumb" role="navigation">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">login</li>
+      </ol>
+    </nav>
     <div>
         <form action="{% url "login" %}" method="post" class="" id="login-form">
             {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Go" />
+            {% for field in form %}
+                <p>
+                <input id="id-{{ field.name }}" name={{ field.name }} placeholder="{{ field.name }}" type="{% if field.name == "password" %}password{% else %}text{% endif %}" />
+                </p>
+            {% endfor %}
+            <input type="submit" value="login" />
         </form>
     </div>
 {% endblock %}
