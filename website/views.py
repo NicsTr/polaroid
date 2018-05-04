@@ -78,7 +78,6 @@ def gallery(request, gid):
     for img in ctxt["imgs"]:
         if img.large is None or str(img.large) == "":
             # Create large image for retro-compatibility
-            print "convert !!"
             img.large = str(img.thumb).replace("small", "large")
             im = IMG.open(str(img.path))
             s = im.size
