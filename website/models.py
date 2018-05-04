@@ -19,7 +19,7 @@ class Gallery(RandomPrimaryIdModel):
     def save(self, *args, **kwargs):
         super(Gallery, self).save(*args, **kwargs)
         # Create the repo for this gallery
-        path = os.path.join(settings.MEDIA_DIR, self.id)
+        path = os.path.join(settings.MEDIA_ROOT, self.id)
         if not os.path.exists(path):
             os.makedirs(path)
         self.path = path
