@@ -75,22 +75,6 @@ def gallery(request, gid):
     gal = Gallery.objects.get(id=gid)
     ctxt["gal"] = gal 
     ctxt["imgs"] = gal.image_set.all()
-    for img in ctxt["imgs"]:
-        if img.large is None or str(img.large) == "":
-            # Create large image for retro-compatibility
-            img.large = str(img.thumb).replace("small", "large")
-            im = IMG.open(str(img.path))
-            s = im.size
-            r = float(s[0]) / s[1]
-            with open(str(img.large), 'wb+') as dest:
-                if r < 1:
-                    im.thumbnail((r*2000, 2000), IMG.ANTIALIAS)
-                else:
-                    im.thumbnail((2000, 2000/r), IMG.ANTIALIAS)
-                im.save(dest, "JPEG")
-            img.save()
-        else:
-            print str(img.large)
     ctxt["form"] = UploadForm(initial={"gallery": gid})
     return render(request, tpl, ctxt)
 
