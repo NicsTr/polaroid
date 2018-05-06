@@ -141,7 +141,7 @@ function choose(choices) {
 
 var arrange_all = function() {
     $("#padding").html();
-    var ideal_h = window.innerHeight / 2.3;
+    var ideal_h = window.innerHeight / 2.1;
     var sum_width = 0;
     var ratio = [];
     $("a > img", gallery).each(function() {
@@ -161,40 +161,13 @@ var arrange_all = function() {
             var img = $("a > img", gallery).get(img_idx);
             img.width = ($(window).width() - 10 - 4*partition[i].length) / sum_ratio * ratio[img_idx];
             img.height = ($(window).width() - 10 - 4*partition[i].length) / sum_ratio;
+            if (img.height > 1000 || img.width > 1000)
+                img.src = img.src.replace("small", "large");
             img_idx += 1;
         }
     }
     $("#gallery").attr("style", "");
     return;
-    for (var i = 0; i < partition.length; i++) {
-        var img = $("a > img", gallery).get(i);
-        w_row += $("a > img", gallery).get(i).width + 3;
-    }
-    return;
-    var h_min = window.innerHeight / 10.0;
-    var h_max = window.innerHeight / 5.0;
-    var [h, w_pad] = arrange_gallery($("#gallery"), h_min, h_max);
-    /* Compute gap on last row */
-    if (w_pad > 0) {
-        $("#padding").width(w_pad);
-        $("#padding").height(h);
-        square = gcd(h, w_pad);
-        /* Number of images to put */
-        var nb_img = (h / square) * (w_pad / square);
-        for (i = 0; i < nb_img; i++) {
-            var img = choose($("a > img", "#gallery"));
-            var new_img = $(img).clone();
-            if (i < w_pad / square / 2 && false) {
-                new_img.get(0).height = 2*square;
-                new_img.get(0).width = 2*square;
-            } else {
-                new_img.get(0).height = square;
-                new_img.get(0).width = square;
-            } 
-            new_img.addClass("square");
-            $("#padding").append(new_img);
-        }
-    }
 }
 
 $(window).on("load", arrange_all);
