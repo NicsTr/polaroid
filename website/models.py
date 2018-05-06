@@ -9,6 +9,19 @@ from django.contrib.auth.models import User
 
 from website.random_primary import RandomPrimaryIdModel
 
+def image_path(instance, filename, size):
+    print  instance.id
+    return '{0}/{1}{2}.jpg'.format(instance.gl.path, instance.id, size)
+
+def image_large_path(instance, filename):
+    return image_path(instance, filename, '-large')
+
+def image_normal_path(instance, filename):
+    return image_path(instance, filename, '')
+
+def image_thumb_path(instance, filename):
+    return image_path(instance, filename, '-small')
+
 class Gallery(RandomPrimaryIdModel):
     # Name of the gallery
     name = models.CharField(max_length=256, blank=True, null=True)
@@ -27,9 +40,9 @@ class Gallery(RandomPrimaryIdModel):
 
 
 class Image(RandomPrimaryIdModel):
-    path = models.ImageField(blank=True, null=True)
-    large = models.ImageField(blank=True, null=True)
-    thumb = models.ImageField(blank=True, null=True)
+    path = models.ImageField(upload_to=image_normal_path, blank=True, null=True)
+    large = models.ImageField(upload_to=image_large_path, blank=True, null=True)
+    thumb = models.ImageField(upload_to=image_thumb_path, blank=True, null=True)
     caption = models.CharField(max_length=1024, null=True, blank=True, default="")
     uploaded = models.DateTimeField(auto_now_add=True)
     gl = models.ForeignKey('Gallery', null=True)

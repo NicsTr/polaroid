@@ -1,16 +1,32 @@
 
 import os
+from io import StringIO, BytesIO
 from PIL import Image as IMG
 
 from django import forms
+from django.core.files.base import ContentFile, BytesIO
 
 from website.models import Gallery, Image
+
+
+def resize(image, max_len):
+    w, h = image.size
+    if w < h:
+        nh = max_len
+        nw = w * (nh / float(h)) 
+    else:
+        nw = max_len
+        nh = h * (nw / float(w)) 
+    medium = image.resize((int(nw), int(nh)), IMG.ANTIALIAS)
+    buffer = BytesIO()
+    medium.save(buffer, 'JPEG')
+    return ContentFile(buffer.getvalue())
+
 
 class UploadForm(forms.ModelForm):
     class Meta:
         model = Image
         fields = [
-                    # 'path', 
                     'gl',
                 ]
         widgets = {
@@ -28,35 +44,19 @@ class UploadForm(forms.ModelForm):
 
     def save(self, img, owner):
         gal = self.cleaned_data.get("gl")
-        new_img = Image(
+        instance = Image(
                         gl=gal,
                         owner=owner,
                     )
-        new_img.save()
-        new_img.path=os.path.join(gal.path, new_img.id + ".jpg")
-        new_img.large=os.path.join(gal.path, new_img.id + "-large.jpg")
-        new_img.thumb=os.path.join(gal.path, new_img.id + "-small.jpg")
-        new_img.save()
-        with open(str(new_img.path), 'wb+') as dest:
-            for chunk in img.chunks():
-                dest.write(chunk)
-        im = IMG.open(str(new_img.path))
-        s = im.size
-        r = float(s[0]) / s[1]
-        with open(str(new_img.thumb), 'wb+') as dest:
-            if r < 1:
-                im.thumbnail((r*1000, 1000), IMG.ANTIALIAS)
-            else:
-                im.thumbnail((1000, 1000/r), IMG.ANTIALIAS)
-            im.save(dest, "JPEG")
-        im = IMG.open(str(new_img.path))
-        s = im.size
-        r = float(s[0]) / s[1]
-        with open(str(new_img.large), 'wb+') as dest:
-            if r < 1:
-                im.thumbnail((r*2000, 2000), IMG.ANTIALIAS)
-            else:
-                im.thumbnail((2000, 2000/r), IMG.ANTIALIAS)
-            im.save(dest, "JPEG")
-        return new_img
+        instance.save()
 
+        image = ContentFile(reduce(lambda a, b: a+b, img.chunks(), ""))
+        instance.path.save('__', content=image) # , content=resize(image, 2000))
+        instance.path.seek(0)
+        image = IMG.open(instance.path.file)
+        instance.large.save('__', content=resize(image, 2000))
+        instance.thumb.save('__', content=resize(image, 1000))
+
+        instance.save()
+
+        return instance
