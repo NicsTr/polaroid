@@ -17,6 +17,9 @@ var get_cover = function(el) {
 
 var activate_pin = function() {
     $(".pinning a").click(function(e) {
+        if (!$("#gallery").hasClass("action-in-progress")) {
+            return;
+        }
         e.preventDefault();
         set_cover(this);
     });
@@ -26,6 +29,7 @@ $(document).ready(function() {
     $("#pin").click(function() {
         $("#pin").toggleClass("pinning");
         $("#gallery").toggleClass("pinning");
+        $("#gallery").toggleClass("action-in-progress");
         activate_pin();
     });
 });

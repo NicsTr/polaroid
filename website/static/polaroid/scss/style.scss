@@ -307,11 +307,12 @@ h2 {
     }
 }
 
-.rm-container.removing a:hover {
-    opacity: 0.4;
-    background-color: #2ecc71;
-    img {
+.rm-container.action-in-progress {
+    a:hover {
         opacity: 0.4;
+        img {
+            opacity: 0.4;
+        }
     }
 }
 

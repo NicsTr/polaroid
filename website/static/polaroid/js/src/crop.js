@@ -17,6 +17,9 @@ var crop = function(el) {
 
 var activate_crop = function() {
     $(".cropping a").click(function(e) {
+        if (!$("#gallery").hasClass("action-in-progress")) {
+            return;
+        }
         e.preventDefault();
         crop(this);
     });
@@ -26,6 +29,7 @@ $(document).ready(function() {
     $("#crop").click(function() {
         $("#crop").toggleClass("cropping");
         $("#gallery").toggleClass("cropping");
+        $("#gallery").toggleClass("action-in-progress");
         activate_crop();
     });
 });
