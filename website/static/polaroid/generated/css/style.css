@@ -291,7 +291,7 @@ h2 {
 }
 /* line 282, ../../scss/style.scss */
 .my-galleries > div a, .liked-galleries > div a {
-  float: left;
+  display: inline-block;
   text-decoration: none;
   text-align: center;
 }

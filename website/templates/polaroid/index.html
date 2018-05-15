@@ -12,11 +12,10 @@
 <div class="my-galleries rm-container">
     <nav aria-label="breadcrumb" role="navigation">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page">my galleries</li>
+        <li class="breadcrumb-item active" aria-current="page">my galleries (<a href="{% url 'create' %}">new</a>)</li>
       </ol>
     </nav>
     <div>
-        <a class="plus" title="NEW GALLERY" href="{% url 'create' %}">+</a> 
         {% for gal in galleries %}
         <a title="{% if gal.name != None and gal.name != "" %}{{ gal.name }}{% else %}{{ gal.id }}{% endif %}" data-id="{{ gal.id }}" href="{% url 'gallery' gal.id %}" class="{{ gal.id }}"><img src=""></a>
         {% endfor %}
