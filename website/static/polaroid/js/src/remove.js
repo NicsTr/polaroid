@@ -7,7 +7,7 @@ var remove = function(el) {
         $.ajax({url: "/rm/img/" + $("img", el).attr("data-id")}).complete(function(xhr) {
             if (xhr.responseText == "OK") {
                 $(el).remove();
-                arrange_gallery();
+                arrange_all();
                 display_alert("removed");
             }
         });
@@ -21,18 +21,23 @@ var remove = function(el) {
 }
 
 var activate_rm = function() {
-    $(".rm-container a").click(function(e) {
-        if ($("#remove").hasClass("removing")) {
-            e.preventDefault();
-            remove(this);
+    console.log("AYO");
+    $(".removing a").click(function(e) {
+        console.log("YOLO ?");
+        if (!$("#gallery").hasClass("action-in-progress")) {
+            return;
         }
+        console.log("YOLO");
+        e.preventDefault();
+        remove(this);
     });
 }
 
 $(document).ready(function() {
     $("#remove").click(function() {
         $("#remove").toggleClass("removing");
-        $(".rm-container").toggleClass("removing");
+        $("#gallery").toggleClass("removing");
+        $("#gallery").toggleClass("action-in-progress");
+        activate_rm();
     });
-    activate_rm();
 });
