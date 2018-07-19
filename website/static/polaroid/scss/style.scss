@@ -20,7 +20,11 @@ body {
     width: 100%;
     background-color: #FFFFFF;
     font-family: "Helvetica Neue";
+    &.carousel {
+        background-color: #2d3436; 
+    }
 }
+
 
 h1 {
     font-family: London, serif;
@@ -468,7 +472,7 @@ form {
         img {
             height: 100%;
             width: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
     }
 }

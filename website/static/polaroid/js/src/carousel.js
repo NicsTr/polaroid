@@ -6,11 +6,13 @@ var enter_carousel = function(el) {
     $(".carousel-item[data-img=" + $(el).attr("data-id") + "]", "#gallery-carousel").addClass("active");
     $("#gallery-carousel").removeClass("hidden");
     $("#gallery").addClass("hidden");
+    $("body").addClass("carousel");
 };
 
 var exit_carousel = function() {
     $("#gallery-carousel").addClass("hidden");
     $("#gallery").removeClass("hidden");
+    $("body").removeClass("carousel");
 }
 
 $(document).ready(function() {
