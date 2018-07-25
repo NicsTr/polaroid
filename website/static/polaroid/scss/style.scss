@@ -67,13 +67,13 @@ body header {
     #hdr-right {
         font-size: 1.3em;
         a {
-            margin-left: 30px;
+            margin-left: $margin; 
             height: 100%;
             text-decoration: none;
         }
         #like {
             font-family: Love;
-            color: white;
+            color: black;
             &.liked, &:hover {
                 color: #e74c3c;
             }
@@ -161,12 +161,14 @@ body:not(.gallery) section {
 }
 
 body.gallery > header {
+    /*
     position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
+    */
     height: $hdr-size;
-    background-color: rgba(55, 55, 55, 0.6);
+    // background-color: rgba(55, 55, 55, 0.6);
     font-family: "London";
 
     border-style: solid;
@@ -174,37 +176,20 @@ body.gallery > header {
    
     #hdr-left {
         position: absolute;
+        font-weight: bold;
         z-index: 2;
         float: left;
-        margin-left: 50px;
+        margin-left: 10px; 
         height: $hdr-size;
-        h1 {
-            font-size: 1em;
-            margin: 0px;
-            height: 100%;
-            line-height: $hdr-size;
-            #t-p, #t-d {
-                // color: white;
-            }
-        }
-    }
-
-    #hdr-center {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        height: $hdr-size;
-        line-height: $hdr-size;
-        text-align: center;
-        color: white;
-
+        line-height: $hdr-size + $margin;
+        color: black;
         input#naming {
-            color: white;
+            color: black;
             font-size: 0.9em;
+            font-weight: bold;
 			width: 300px;
             background-color: rgba(0,0,0,0);
-            text-align: center;
+            text-align: left;
 
     		border: none;
     		outline: none;
@@ -215,21 +200,40 @@ body.gallery > header {
         }
     }
 
+    #hdr-center {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        height: $hdr-size;
+        text-align: center;
+
+        h1 {
+            font-size: 1em;
+            margin: 0px;
+            height: 100%;
+            line-height: $hdr-size + $margin/2;
+            #t-p, #t-d {
+                // color: white;
+            }
+        }
+
+    }
+
     #hdr-right {
         position: absolute;
         right: 0px;
-        margin-right: 50px;
+        margin-right: 10px;
         height: $hdr-size;
         a {
             font-size: 0.6em;
-            color: white;
+            color: black;
             line-height: $hdr-size;
         }
     }
 }
 
 #gallery {
-    margin-top: $margin + $hdr_size;
     padding-left: $margin;
     padding-right: $margin;
     margin-bottom: $margin;

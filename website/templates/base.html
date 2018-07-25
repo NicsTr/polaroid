@@ -24,27 +24,13 @@
     <header>
         {% block header %}
         <div id="hdr-left">
-            {% if gal.owner %}
-            <h1>
-                <a href="{% url 'index' %}">
-                    <span id="t-p">p</span>
-                    <span id="t-o">o</span>
-                    <span id="t-l">l</span>
-                    <span id="t-a">a</span>
-                    <span id="t-r">r</span>
-                    <span id="t-oo">o</span>
-                    <span id="t-i">i</span>
-                    <span id="t-d">d</span>
-                </a>
-            </h1>
+            {% if user == gal.owner %}
+            <input type="text" id="naming" placeholder="name your gallery!" 
+            value="{% endif %}{% if gal.name != None %}{{ gal.name }}{% endif %}{% if user == gal.owner %}">
             {% endif %}
         </div>
         {% endblock %}
         <div id="hdr-center">
-            {% if user == gal.owner %}
-            <input type="text" id="naming" placeholder="name your gallery!" 
-            value="{% endif %}{% if gal.name != None %}{{ gal.name }}{% endif %}{% if user == gal.owner %}">
-            {% elif not gal.owner %}
             <h1>
                 <a href="{% url 'index' %}">
                     <span id="t-p">p</span>
@@ -57,7 +43,6 @@
                     <span id="t-d">d</span>
                 </a>
             </h1>
-            {% endif %}
         </div>
         <div id="hdr-right">
             {% block hdr-right %}

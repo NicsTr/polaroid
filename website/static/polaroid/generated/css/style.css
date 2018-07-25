@@ -83,14 +83,14 @@ body header #hdr-right {
 }
 /* line 69, ../../scss/style.scss */
 body header #hdr-right a {
-  margin-left: 30px;
+  margin-left: 5px;
   height: 100%;
   text-decoration: none;
 }
 /* line 74, ../../scss/style.scss */
 body header #hdr-right #like {
   font-family: Love;
-  color: white;
+  color: black;
 }
 /* line 77, ../../scss/style.scss */
 body header #hdr-right #like.liked, body header #hdr-right #like:hover {
@@ -163,84 +163,86 @@ body:not(.gallery) section {
 
 /* line 163, ../../scss/style.scss */
 body.gallery > header {
+  /*
   position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
+  */
   height: 30px;
-  background-color: rgba(55, 55, 55, 0.6);
   font-family: "London";
   border-style: solid;
   border-width: 0px 0px 0px 0px;
 }
-/* line 175, ../../scss/style.scss */
+/* line 177, ../../scss/style.scss */
 body.gallery > header #hdr-left {
   position: absolute;
+  font-weight: bold;
   z-index: 2;
   float: left;
-  margin-left: 50px;
+  margin-left: 10px;
   height: 30px;
+  line-height: 35px;
+  color: black;
 }
-/* line 181, ../../scss/style.scss */
-body.gallery > header #hdr-left h1 {
-  font-size: 1em;
-  margin: 0px;
-  height: 100%;
-  line-height: 30px;
-}
-/* line 192, ../../scss/style.scss */
-body.gallery > header #hdr-center {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  color: white;
-}
-/* line 202, ../../scss/style.scss */
-body.gallery > header #hdr-center input#naming {
-  color: white;
+/* line 186, ../../scss/style.scss */
+body.gallery > header #hdr-left input#naming {
+  color: black;
   font-size: 0.9em;
+  font-weight: bold;
   width: 300px;
   background-color: transparent;
-  text-align: center;
+  text-align: left;
   border: none;
   outline: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 218, ../../scss/style.scss */
+/* line 203, ../../scss/style.scss */
+body.gallery > header #hdr-center {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 30px;
+  text-align: center;
+}
+/* line 211, ../../scss/style.scss */
+body.gallery > header #hdr-center h1 {
+  font-size: 1em;
+  margin: 0px;
+  height: 100%;
+  line-height: 32.5px;
+}
+/* line 223, ../../scss/style.scss */
 body.gallery > header #hdr-right {
   position: absolute;
   right: 0px;
-  margin-right: 50px;
+  margin-right: 10px;
   height: 30px;
 }
-/* line 223, ../../scss/style.scss */
+/* line 228, ../../scss/style.scss */
 body.gallery > header #hdr-right a {
   font-size: 0.6em;
-  color: white;
+  color: black;
   line-height: 30px;
 }
 
-/* line 231, ../../scss/style.scss */
+/* line 236, ../../scss/style.scss */
 #gallery {
-  margin-top: 35px;
   padding-left: 5px;
   padding-right: 5px;
   margin-bottom: 5px;
 }
 
-/* line 238, ../../scss/style.scss */
+/* line 242, ../../scss/style.scss */
 img {
   float: left;
   margin: 2px;
 }
 
-/* line 243, ../../scss/style.scss */
+/* line 247, ../../scss/style.scss */
 #padding {
   display: inline-block;
   height: 0px;
@@ -250,13 +252,13 @@ img {
   overflow-y: hidden;
 }
 
-/* line 252, ../../scss/style.scss */
+/* line 256, ../../scss/style.scss */
 img.square {
   object-fit: cover;
   margin: 0px;
 }
 
-/* line 257, ../../scss/style.scss */
+/* line 261, ../../scss/style.scss */
 #upload-form {
   position: fixed;
   top: 0px;
@@ -265,45 +267,45 @@ img.square {
   right: 0px;
 }
 
-/* line 265, ../../scss/style.scss */
+/* line 269, ../../scss/style.scss */
 .dz-preview {
   display: none;
 }
 
-/* line 269, ../../scss/style.scss */
+/* line 273, ../../scss/style.scss */
 .love {
   color: #e74c3c;
 }
 
-/* line 273, ../../scss/style.scss */
+/* line 277, ../../scss/style.scss */
 h2 {
   color: #404040;
 }
 
-/* line 277, ../../scss/style.scss */
+/* line 281, ../../scss/style.scss */
 .my-galleries, .liked-galleries {
   display: block;
   margin-bottom: 50px;
   min-height: 200px;
 }
-/* line 281, ../../scss/style.scss */
+/* line 285, ../../scss/style.scss */
 .my-galleries > div, .liked-galleries > div {
   display: block;
   margin: auto;
   margin-left: 10px;
   margin-right: 10px;
 }
-/* line 286, ../../scss/style.scss */
+/* line 290, ../../scss/style.scss */
 .my-galleries > div a, .liked-galleries > div a {
   display: inline-block;
   text-decoration: none;
   text-align: center;
 }
-/* line 292, ../../scss/style.scss */
+/* line 296, ../../scss/style.scss */
 .my-galleries a.plus, .liked-galleries a.plus {
   color: black;
 }
-/* line 295, ../../scss/style.scss */
+/* line 299, ../../scss/style.scss */
 .my-galleries img, .my-galleries .plus, .liked-galleries img, .liked-galleries .plus {
   display: inline-block;
   width: 100px;
@@ -316,18 +318,18 @@ h2 {
   line-height: 85px;
   background-color: #e9ecef;
 }
-/* line 306, ../../scss/style.scss */
+/* line 310, ../../scss/style.scss */
 .my-galleries img:hover, .my-galleries .plus:hover, .liked-galleries img:hover, .liked-galleries .plus:hover {
   border-style: solid;
   border-color: black;
   border-width: 2px;
 }
 
-/* line 315, ../../scss/style.scss */
+/* line 319, ../../scss/style.scss */
 .rm-container.action-in-progress a:hover {
   opacity: 0.4;
 }
-/* line 317, ../../scss/style.scss */
+/* line 321, ../../scss/style.scss */
 .rm-container.action-in-progress a:hover img {
   opacity: 0.4;
 }
@@ -348,7 +350,7 @@ h2 {
     opacity: 0;
   }
 }
-/* line 332, ../../scss/style.scss */
+/* line 336, ../../scss/style.scss */
 #alert {
   position: fixed;
   top: 0px;
@@ -359,7 +361,7 @@ h2 {
   opacity: 0;
   -webkit-transition: opacity 0.5s;
 }
-/* line 340, ../../scss/style.scss */
+/* line 344, ../../scss/style.scss */
 #alert .alert-txt {
   position: absolute;
   top: 0px;
@@ -372,76 +374,76 @@ h2 {
   text-align: center;
   color: white;
 }
-/* line 353, ../../scss/style.scss */
+/* line 357, ../../scss/style.scss */
 #alert.active {
   opacity: 1;
 }
-/* line 356, ../../scss/style.scss */
+/* line 360, ../../scss/style.scss */
 #alert.pinned {
   z-index: 99;
   background-color: #2ecc71;
 }
-/* line 359, ../../scss/style.scss */
+/* line 363, ../../scss/style.scss */
 #alert.pinned .alert-txt:before {
   content: "PINNED AS COVER!";
 }
-/* line 363, ../../scss/style.scss */
+/* line 367, ../../scss/style.scss */
 #alert.cropped {
   z-index: 99;
   background-color: #8e44ad;
 }
-/* line 366, ../../scss/style.scss */
+/* line 370, ../../scss/style.scss */
 #alert.cropped .alert-txt:before {
   content: "PICTURE CROPPED";
 }
-/* line 370, ../../scss/style.scss */
+/* line 374, ../../scss/style.scss */
 #alert.named {
   z-index: 99;
   background-color: #34495e;
 }
-/* line 373, ../../scss/style.scss */
+/* line 377, ../../scss/style.scss */
 #alert.named .alert-txt:before {
   content: "GALLERY RENAMED!";
 }
-/* line 377, ../../scss/style.scss */
+/* line 381, ../../scss/style.scss */
 #alert.removed {
   z-index: 99;
   background-color: #f39c12;
 }
-/* line 380, ../../scss/style.scss */
+/* line 384, ../../scss/style.scss */
 #alert.removed .alert-txt:before {
   content: "PICTURE REMOVED!";
 }
-/* line 384, ../../scss/style.scss */
+/* line 388, ../../scss/style.scss */
 #alert.liked {
   z-index: 99;
   background-color: #e74c3c;
 }
-/* line 387, ../../scss/style.scss */
+/* line 391, ../../scss/style.scss */
 #alert.liked .alert-txt:before {
   font-family: 'Icons';
   content: "\e077";
 }
-/* line 391, ../../scss/style.scss */
+/* line 395, ../../scss/style.scss */
 #alert.liked .alert-txt:after {
   content: " IT!";
 }
-/* line 395, ../../scss/style.scss */
+/* line 399, ../../scss/style.scss */
 #alert.unliked {
   z-index: 99;
   background-color: #e74c3c;
 }
-/* line 398, ../../scss/style.scss */
+/* line 402, ../../scss/style.scss */
 #alert.unliked .alert-txt:before {
   content: "UN-";
 }
-/* line 401, ../../scss/style.scss */
+/* line 405, ../../scss/style.scss */
 #alert.unliked .alert-txt:after {
   font-family: 'Icons';
   content: "\e077";
 }
 
-/* line 408, ../../scss/style.scss */
+/* line 412, ../../scss/style.scss */
 body footer {
   position: absolute;
   height: 30px;
@@ -451,21 +453,21 @@ body footer {
   text-align: right;
   font-size: 0.8em;
 }
-/* line 416, ../../scss/style.scss */
+/* line 420, ../../scss/style.scss */
 body footer a {
   margin-left: 30px;
 }
 
-/* line 421, ../../scss/style.scss */
+/* line 425, ../../scss/style.scss */
 body.gallery footer {
   display: none;
 }
 
-/* line 425, ../../scss/style.scss */
+/* line 429, ../../scss/style.scss */
 form {
   text-align: center;
 }
-/* line 427, ../../scss/style.scss */
+/* line 431, ../../scss/style.scss */
 form input {
   margin-top: 10px;
   width: 300px;
@@ -476,28 +478,28 @@ form input {
   text-align: center;
   outline: none;
 }
-/* line 436, ../../scss/style.scss */
+/* line 440, ../../scss/style.scss */
 form input:focus {
   border-color: #2ecc71;
   border-width: 0px 0px 2px 0px;
 }
-/* line 441, ../../scss/style.scss */
+/* line 445, ../../scss/style.scss */
 form input[type=submit] {
   border-style: none;
   color: #2ecc71;
 }
-/* line 444, ../../scss/style.scss */
+/* line 448, ../../scss/style.scss */
 form input[type=submit]:hover {
   cursor: pointer;
   color: black;
 }
 
-/* line 451, ../../scss/style.scss */
+/* line 455, ../../scss/style.scss */
 .hidden {
   display: none;
 }
 
-/* line 455, ../../scss/style.scss */
+/* line 459, ../../scss/style.scss */
 .carousel {
   position: fixed;
   top: 35px;
@@ -506,7 +508,7 @@ form input[type=submit]:hover {
   right: 6px;
   overflow: hidden;
 }
-/* line 463, ../../scss/style.scss */
+/* line 467, ../../scss/style.scss */
 .carousel .carousel-inner {
   position: absolute;
   top: 0px;
@@ -514,11 +516,11 @@ form input[type=submit]:hover {
   left: 0px;
   right: 0px;
 }
-/* line 469, ../../scss/style.scss */
+/* line 473, ../../scss/style.scss */
 .carousel .carousel-inner .carousel-item {
   height: 100%;
 }
-/* line 472, ../../scss/style.scss */
+/* line 476, ../../scss/style.scss */
 .carousel .carousel-inner img {
   height: 100%;
   width: 100%;
