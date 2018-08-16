@@ -1,7 +1,7 @@
 
 from PIL import Image as IMG
 
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -26,16 +26,18 @@ def create_gallery(request):
     return redirect("gallery", g.id)
 
 def cover_gallery(request, gid):
-    cover = Gallery.objects.get(id=gid).cover
+    gal = get_object_or_404(Gallery, id=gid)
+    cover = gal.cover
     if cover is None:
-        cover = Gallery.objects.get(id=gid).image_set.first()
+        cover = gal.image_set.first()
     if cover is None:
         return HttpResponse()
     else:
         return HttpResponse(gid + ";" + cover.id)
 
 def name_gallery(request, gid):
-    name = Gallery.objects.get(id=gid).name
+    gal = get_object_or_404(Gallery, id=gid)
+    name = gal.name
     if name is None:
         return HttpResponse("")
     else:
@@ -48,31 +50,31 @@ def set_name_gallery(request, gid):
         name = request.POST["name"]
     except KeyError:
         return HttpResponse("KO")
-    gl = Gallery.objects.get(id=gid)
-    if gl is None or gl.owner != request.user:
+    gal = get_object_or_404(Gallery, id=gid)
+    if gal is None or gal.owner != request.user:
         return HttpResponse("KO")
     if name == "":
         return HttpResponse("KO")
-    gl.name = name
-    gl.save()
+    gal.name = name
+    gal.save()
     return HttpResponse("OK")
 
 @login_required
 def set_cover_gallery(request, gid, mid):
-    gl = Gallery.objects.get(id=gid)
-    if gl is None or gl.owner != request.user:
+    gal = get_object_or_404(Gallery, id=gid)
+    if gal is None or gal.owner != request.user:
         return HttpResponse("KO")
-    img = gl.image_set.get(id=mid)
+    img = gal.image_set.get(id=mid)
     if img is None or img.owner != request.user:
         return HttpResponse("KO")
-    gl.cover = img
-    gl.save()
+    gal.cover = img
+    gal.save()
     return HttpResponse("OK")
 
 def gallery(request, gid):
     tpl = "polaroid/gallery.html"
     ctxt = dict()
-    gal = Gallery.objects.get(id=gid)
+    gal = get_object_or_404(Gallery, id=gid)
     ctxt["gal"] = gal 
     ctxt["imgs"] = gal.image_set.all()
     ctxt["form"] = UploadForm(initial={"gallery": gid})
@@ -80,7 +82,7 @@ def gallery(request, gid):
 
 @login_required
 def remove_img(request, mid):
-    img = Image.objects.get(id=mid)
+    img = get_object_or_404(Image, id=mid)
     if img.owner != request.user:
         return HttpResponse("KO")
     img.delete()
@@ -88,12 +90,12 @@ def remove_img(request, mid):
 
 @login_required
 def remove_gallery(request, gid):
-    gl = Gallery.objects.get(id=gid)
-    if gl.owner != request.user:
+    gal = get_object_or_404(Gallery, id=gid)
+    if gal.owner != request.user:
         return HttpResponse("KO")
-    for img in gl.image_set.all():
+    for img in gal.image_set.all():
         img.delete()
-    gl.delete()
+    gal.delete()
     return HttpResponse("OK")
 
 @login_required
@@ -135,7 +137,7 @@ def register(request):
 
 
 def crop(request, mid):
-    img = Image.objects.get(id=mid)
+    img = get_object_or_404(Image, id=mid)
     if img.owner != request.user:
         return HttpResponse("KO")
     img.crop(16.0/9.0)
