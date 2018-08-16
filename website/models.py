@@ -1,4 +1,3 @@
-from __future__ import unicode_literals
 
 import os 
 from PIL import Image as PILImage
@@ -10,7 +9,7 @@ from django.contrib.auth.models import User
 from website.random_primary import RandomPrimaryIdModel
 
 def image_path(instance, filename, size):
-    print  instance.id
+    print(instance.id)
     return '{0}/{1}{2}.jpg'.format(instance.gl.path, instance.id, size)
 
 def image_large_path(instance, filename):

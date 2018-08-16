@@ -1,4 +1,3 @@
-
 from PIL import Image as IMG
 
 from django.shortcuts import render, redirect, HttpResponse

@@ -1,4 +1,3 @@
-
 import os
 from io import StringIO, BytesIO
 from PIL import Image as IMG
@@ -7,6 +6,7 @@ from django import forms
 from django.core.files.base import ContentFile, BytesIO
 
 from website.models import Gallery, Image
+from functools import reduce
 
 
 def resize(image, max_len):
@@ -50,7 +50,7 @@ class UploadForm(forms.ModelForm):
                     )
         instance.save()
 
-        image = ContentFile(reduce(lambda a, b: a+b, img.chunks(), ""))
+        image = ContentFile(reduce(lambda a, b: a+b, img.chunks(), b""))
         instance.path.save('__', content=image) # , content=resize(image, 2000))
         instance.path.seek(0)
         image = IMG.open(instance.path.file)
