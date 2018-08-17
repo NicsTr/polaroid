@@ -103,9 +103,13 @@ def upload(request):
         # Handle this properly (error message)
         return redirect("index")
     form = UploadForm(request.POST, request.FILES)
-    if form.is_valid(request.user):
-        form.save(request.FILES["path"], request.user)
-        return HttpResponse("OK")
+    try:
+        if form.is_valid(request.user):
+            form.save(request.FILES["path"], request.user)
+            print(request.FILES["path"])
+            return HttpResponse("OK")
+    except Exception as e:
+        return HttpResponse(status=415)
     return HttpResponse("KO")
 
 
