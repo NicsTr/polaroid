@@ -64,11 +64,11 @@ class Image(RandomPrimaryIdModel):
             cropped.save(str(img), "JPEG")
 
     def delete(self, *args, **kwargs):
-        if os.path.isfile(self.path.path):
+        if self.path and os.path.isfile(self.path.path):
             os.remove(self.path.path)
-        if os.path.isfile(self.large.path):
+        if self.large and os.path.isfile(self.large.path):
             os.remove(self.large.path)
-        if os.path.isfile(self.thumb.path):
+        if self.thumb and os.path.isfile(self.thumb.path):
             os.remove(self.thumb.path)
 
         super(Image, self).delete(*args,**kwargs)
