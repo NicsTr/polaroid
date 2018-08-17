@@ -38,6 +38,10 @@ class Gallery(RandomPrimaryIdModel):
         self.path = path
         super(Gallery, self).save(*args, **kwargs)
 
+    def delete(self, *args, **kwargs):
+        if os.path.isdir(self.path):
+            os.remove(self.path)
+        super(Gallery, self).delete(*args,**kwargs)
 
 class Image(RandomPrimaryIdModel):
     path = models.ImageField(upload_to=image_normal_path, blank=True, null=True)
@@ -59,3 +63,13 @@ class Image(RandomPrimaryIdModel):
                 p = int((h - nh) / 2)
                 cropped = cropped.crop((0, p, w, h - p))
             cropped.save(str(img), "JPEG")
+
+    def delete(self, *args, **kwargs):
+        if os.path.isfile(self.path.path):
+            os.remove(self.path.path)
+        if os.path.isfile(self.large.path):
+            os.remove(self.large.path)
+        if os.path.isfile(self.thumb.path):
+            os.remove(self.thumb.path)
+
+        super(Image, self).delete(*args,**kwargs)
