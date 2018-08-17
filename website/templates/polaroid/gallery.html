@@ -91,4 +91,13 @@
     dpz.on("success", function(file, xhr) {
         //location.reload();
     });
-{% endblock %}
+
+    dpz.on("error", function(file, xhr) {
+        new Noty({
+            type: 'error',
+            layout: 'bottomRight',
+            text: 'Error while uploading file',
+            timeout: 6000
+        }).show();
+    });
+    {% endblock %}

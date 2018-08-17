@@ -48,15 +48,20 @@ class UploadForm(forms.ModelForm):
                         gl=gal,
                         owner=owner,
                     )
-        instance.save()
+        try:
+            instance.save()
 
-        image = ContentFile(reduce(lambda a, b: a+b, img.chunks(), ""))
-        instance.path.save('__', content=image) # , content=resize(image, 2000))
-        instance.path.seek(0)
-        image = IMG.open(instance.path.file)
-        instance.large.save('__', content=resize(image, 2000))
-        instance.thumb.save('__', content=resize(image, 1000))
+            image = ContentFile(reduce(lambda a, b: a+b, img.chunks(), b""))
+            instance.path.save('__', content=image) # , content=resize(image, 2000))
+            instance.path.seek(0)
+            image = IMG.open(instance.path.file)
+            instance.large.save('__', content=resize(image, 2000))
+            instance.thumb.save('__', content=resize(image, 1000))
 
-        instance.save()
+            instance.save()
+        except Exception as e:
+            print(e)
+            instance.delete()
+            raise Exception
 
         return instance
