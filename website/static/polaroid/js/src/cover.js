@@ -6,11 +6,13 @@ var set_cover = function(el) {
 
 var get_cover = function(el) {
     $.ajax("cover/" + $(el).attr("data-id")).complete(function(xhr) {
-        if (xhr.responseText != "") {
-            var data = xhr.responseText.split(";");
-            var gid = data[0];
-            var mid = data[1];
+        var data = xhr.responseText.split(";");
+        var gid = data[0];
+        var mid = data[1];
+        if (mid != "placeholder") {
             $("img", "." + gid).attr("src", "img/" + gid + "/" + mid + "-small.jpg");
+        } else {
+            $("img", "." + gid).attr("src", "/static/polaroid/img/placeholder.svg" );
         }
     });
 }

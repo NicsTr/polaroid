@@ -30,7 +30,7 @@ def cover_gallery(request, gid):
     if cover is None:
         cover = Gallery.objects.get(id=gid).image_set.first()
     if cover is None:
-        return HttpResponse()
+        return HttpResponse(gid + ";" + "placeholder")
     else:
         return HttpResponse(gid + ";" + cover.id)
 
