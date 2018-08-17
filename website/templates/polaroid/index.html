@@ -12,7 +12,8 @@
 <div class="my-galleries rm-container">
     <nav aria-label="breadcrumb" role="navigation">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page">my galleries (<a href="{% url 'create' %}">new</a>)</li>
+        <li class="breadcrumb-item active" aria-current="page">my galleries
+            (<a id= "new-gal" href="{% url 'create' %}">new</a>)</li>
       </ol>
     </nav>
     <div>
@@ -44,7 +45,7 @@
             $("#liked").append("<a title=\"" + liked[i] + "\" data-id=\"" + liked[i] + "\" href=\"/gl/" + liked[i] + "\" class=\"" + liked[i] + "\"><img src=\"\"></a>");
         }   
         activate_rm();
-        $(".my-galleries a").each(function() {
+        $(".my-galleries a").not("#new-gal").each(function() {
             get_cover(this);
         });
         $(".liked-galleries a").each(function() {
