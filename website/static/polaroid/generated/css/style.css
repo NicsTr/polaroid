@@ -318,18 +318,12 @@ h2 {
   line-height: 85px;
   background-color: #e9ecef;
 }
-/* line 310, ../../scss/style.scss */
-.my-galleries img:hover, .my-galleries .plus:hover, .liked-galleries img:hover, .liked-galleries .plus:hover {
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
-}
 
-/* line 319, ../../scss/style.scss */
+/* line 316, ../../scss/style.scss */
 .rm-container.action-in-progress a:hover {
   opacity: 0.4;
 }
-/* line 321, ../../scss/style.scss */
+/* line 318, ../../scss/style.scss */
 .rm-container.action-in-progress a:hover img {
   opacity: 0.4;
 }
@@ -350,7 +344,7 @@ h2 {
     opacity: 0;
   }
 }
-/* line 336, ../../scss/style.scss */
+/* line 333, ../../scss/style.scss */
 #alert {
   position: fixed;
   top: 0px;
@@ -361,7 +355,7 @@ h2 {
   opacity: 0;
   -webkit-transition: opacity 0.5s;
 }
-/* line 344, ../../scss/style.scss */
+/* line 341, ../../scss/style.scss */
 #alert .alert-txt {
   position: absolute;
   top: 0px;
@@ -374,76 +368,76 @@ h2 {
   text-align: center;
   color: white;
 }
-/* line 357, ../../scss/style.scss */
+/* line 354, ../../scss/style.scss */
 #alert.active {
   opacity: 1;
 }
-/* line 360, ../../scss/style.scss */
+/* line 357, ../../scss/style.scss */
 #alert.pinned {
   z-index: 99;
   background-color: #2ecc71;
 }
-/* line 363, ../../scss/style.scss */
+/* line 360, ../../scss/style.scss */
 #alert.pinned .alert-txt:before {
   content: "PINNED AS COVER!";
 }
-/* line 367, ../../scss/style.scss */
+/* line 364, ../../scss/style.scss */
 #alert.cropped {
   z-index: 99;
   background-color: #8e44ad;
 }
-/* line 370, ../../scss/style.scss */
+/* line 367, ../../scss/style.scss */
 #alert.cropped .alert-txt:before {
   content: "PICTURE CROPPED";
 }
-/* line 374, ../../scss/style.scss */
+/* line 371, ../../scss/style.scss */
 #alert.named {
   z-index: 99;
   background-color: #34495e;
 }
-/* line 377, ../../scss/style.scss */
+/* line 374, ../../scss/style.scss */
 #alert.named .alert-txt:before {
   content: "GALLERY RENAMED!";
 }
-/* line 381, ../../scss/style.scss */
+/* line 378, ../../scss/style.scss */
 #alert.removed {
   z-index: 99;
   background-color: #f39c12;
 }
-/* line 384, ../../scss/style.scss */
+/* line 381, ../../scss/style.scss */
 #alert.removed .alert-txt:before {
   content: "PICTURE REMOVED!";
 }
-/* line 388, ../../scss/style.scss */
+/* line 385, ../../scss/style.scss */
 #alert.liked {
   z-index: 99;
   background-color: #e74c3c;
 }
-/* line 391, ../../scss/style.scss */
+/* line 388, ../../scss/style.scss */
 #alert.liked .alert-txt:before {
   font-family: 'Icons';
   content: "\e077";
 }
-/* line 395, ../../scss/style.scss */
+/* line 392, ../../scss/style.scss */
 #alert.liked .alert-txt:after {
   content: " IT!";
 }
-/* line 399, ../../scss/style.scss */
+/* line 396, ../../scss/style.scss */
 #alert.unliked {
   z-index: 99;
   background-color: #e74c3c;
 }
-/* line 402, ../../scss/style.scss */
+/* line 399, ../../scss/style.scss */
 #alert.unliked .alert-txt:before {
   content: "UN-";
 }
-/* line 405, ../../scss/style.scss */
+/* line 402, ../../scss/style.scss */
 #alert.unliked .alert-txt:after {
   font-family: 'Icons';
   content: "\e077";
 }
 
-/* line 412, ../../scss/style.scss */
+/* line 409, ../../scss/style.scss */
 body footer {
   position: absolute;
   height: 30px;
@@ -453,21 +447,21 @@ body footer {
   text-align: right;
   font-size: 0.8em;
 }
-/* line 420, ../../scss/style.scss */
+/* line 417, ../../scss/style.scss */
 body footer a {
   margin-left: 30px;
 }
 
-/* line 425, ../../scss/style.scss */
+/* line 422, ../../scss/style.scss */
 body.gallery footer {
   display: none;
 }
 
-/* line 429, ../../scss/style.scss */
+/* line 426, ../../scss/style.scss */
 form {
   text-align: center;
 }
-/* line 431, ../../scss/style.scss */
+/* line 428, ../../scss/style.scss */
 form input {
   margin-top: 10px;
   width: 300px;
@@ -478,28 +472,28 @@ form input {
   text-align: center;
   outline: none;
 }
-/* line 440, ../../scss/style.scss */
+/* line 437, ../../scss/style.scss */
 form input:focus {
   border-color: #2ecc71;
   border-width: 0px 0px 2px 0px;
 }
-/* line 445, ../../scss/style.scss */
+/* line 442, ../../scss/style.scss */
 form input[type=submit] {
   border-style: none;
   color: #2ecc71;
 }
-/* line 448, ../../scss/style.scss */
+/* line 445, ../../scss/style.scss */
 form input[type=submit]:hover {
   cursor: pointer;
   color: black;
 }
 
-/* line 455, ../../scss/style.scss */
+/* line 452, ../../scss/style.scss */
 .hidden {
   display: none;
 }
 
-/* line 459, ../../scss/style.scss */
+/* line 456, ../../scss/style.scss */
 .carousel {
   position: fixed;
   top: 35px;
@@ -508,7 +502,7 @@ form input[type=submit]:hover {
   right: 6px;
   overflow: hidden;
 }
-/* line 467, ../../scss/style.scss */
+/* line 464, ../../scss/style.scss */
 .carousel .carousel-inner {
   position: absolute;
   top: 0px;
@@ -516,11 +510,11 @@ form input[type=submit]:hover {
   left: 0px;
   right: 0px;
 }
-/* line 473, ../../scss/style.scss */
+/* line 470, ../../scss/style.scss */
 .carousel .carousel-inner .carousel-item {
   height: 100%;
 }
-/* line 476, ../../scss/style.scss */
+/* line 473, ../../scss/style.scss */
 .carousel .carousel-inner img {
   height: 100%;
   width: 100%;

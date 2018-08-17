@@ -10,7 +10,9 @@ var get_cover = function(el) {
         var gid = data[0];
         var mid = data[1];
         if (mid != "placeholder") {
-            $("img", "." + gid).attr("src", "img/" + gid + "/" + mid + "-small.jpg");
+            $("img", "." + gid).bind("error", function (evt) {
+                $(this).attr("src", "/static/polaroid/img/placeholder.svg" );
+            }).attr("src", "img/" + gid + "/" + mid + "-small.jpg");
         } else {
             $("img", "." + gid).attr("src", "/static/polaroid/img/placeholder.svg" );
         }
