@@ -25,8 +25,8 @@ class Gallery(RandomPrimaryIdModel):
     # Name of the gallery
     name = models.CharField(max_length=256, blank=True, null=True)
     path = models.CharField(max_length=1024, blank=False, null=False)
-    owner = models.ForeignKey(User)
-    cover = models.ForeignKey('Image', null=True)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    cover = models.ForeignKey('Image', null=True, on_delete=models.SET_NULL)
 
     def save(self, *args, **kwargs):
         super(Gallery, self).save(*args, **kwargs)
@@ -44,8 +44,8 @@ class Image(RandomPrimaryIdModel):
     thumb = models.ImageField(upload_to=image_thumb_path, blank=True, null=True)
     caption = models.CharField(max_length=1024, null=True, blank=True, default="")
     uploaded = models.DateTimeField(auto_now_add=True)
-    gl = models.ForeignKey('Gallery', null=True)
-    owner = models.ForeignKey(User)
+    gl = models.ForeignKey('Gallery', null=True, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def crop(self, r):
         for img in [self.path, self.thumb]:
