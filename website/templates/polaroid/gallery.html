@@ -16,6 +16,7 @@
 
 {% block hdr-right %}
     {% if gal.owner == user %}
+        <a href="#" id="upload" class="upload-btn"><span class="oi oi-data-transfer-upload"></span></a>
         <a href="#" id="crop"><span class="oi oi-crop"></span></a>
         <a href="#" id="pin"><span class="oi oi-pin"></span></a>
         <a href="#" id="remove"><span class="oi oi-trash"></span></a>
@@ -27,12 +28,18 @@
 
 <input type="hidden" id="gid" value="{{ gal.id }}">
 <div id="gallery" style="visibility: hidden" class="rm-container">
+    {% if imgs %}
     {% for img in imgs %}
         <a href="/img/{{ gal.id }}/{{ img.id }}.jpg" class="img">
             <img src="/img/{{ gal.id }}/{{ img.id }}-small.jpg" alt="void" data-id="{{ img.id }}" />
         </a>
     {% endfor %}
     <div id="padding"></div>
+    {% elif gal.owner == user %}
+    <div id="empty-gallery">click <a href="#" class="upload-btn">here</a> or drop your pictures</div>
+    {% else %}
+    <div id="empty-gallery">this gallery is empty</div>
+    {% endif %}
 </div>
 
 <div id="alert"><div class="alert-txt"></div></div>
@@ -69,7 +76,7 @@
     });
     var dpz = new Dropzone(document.body, {
         paramName: "path", 
-        clickable: false,
+        clickable: '.upload-btn',
         previewsContainer: "",
         method: "post",
         url: "{% url 'upload' %}",

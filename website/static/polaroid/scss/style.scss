@@ -71,6 +71,11 @@ body header {
             height: 100%;
             text-decoration: none;
         }
+        #upload {
+            &:hover {
+                color: #f1c40f;
+            }
+        }
         #like {
             font-family: Love;
             color: black;
@@ -478,3 +483,9 @@ form {
     }
 }
 
+#empty-gallery {
+    margin: auto;
+    text-align: center;
+    margin-top: 50vh; 
+    transform: translateY(-200%);
+}
