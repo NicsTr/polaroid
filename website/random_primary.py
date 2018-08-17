@@ -122,7 +122,7 @@ class RandomPrimaryIdModel(models.Model):
 
         """
         return self.KEYPREFIX + random.choice(self._FIRSTIDCHAR) + \
-               ''.join([ random.choice(self._IDCHARS) for dummy in xrange(0, key_len-1) ]) + \
+               ''.join([ random.choice(self._IDCHARS) for dummy in range(0, key_len-1) ]) + \
                self.KEYSUFFIX
 
     def save(self, *args, **kwargs):
@@ -157,7 +157,7 @@ class RandomPrimaryIdModel(models.Model):
                 super(RandomPrimaryIdModel, self).save(*args, **kwargs)
                 break                                   # This was a success, so we are done here
 
-            except IntegrityError, e:                   # Apparently, this key is already in use
+            except IntegrityError as e:                   # Apparently, this key is already in use
                 # Only way to differentiate between different IntegrityErrors is to look
                 # into the message string. Too bad. But I need to make sure I only catch
                 # the ones for the 'id' column.

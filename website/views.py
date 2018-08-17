@@ -1,4 +1,3 @@
-
 from PIL import Image as IMG
 
 from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
@@ -14,7 +13,7 @@ from website.forms import UploadForm
 def index(request):
     tpl = "polaroid/index.html"
     ctxt = dict()
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         ctxt["galleries"] = Gallery.objects.all().filter(owner=request.user)
         ctxt["cover"] = list()
     return render(request, tpl, ctxt)

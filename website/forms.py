@@ -1,4 +1,3 @@
-
 import os
 from io import StringIO, BytesIO
 from PIL import Image as IMG
@@ -7,6 +6,7 @@ from django import forms
 from django.core.files.base import ContentFile, BytesIO
 
 from website.models import Gallery, Image
+from functools import reduce
 
 
 def resize(image, max_len):
