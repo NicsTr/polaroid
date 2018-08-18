@@ -1,4 +1,3 @@
-
 from PIL import Image as IMG
 
 from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
@@ -14,7 +13,7 @@ from website.forms import UploadForm
 def index(request):
     tpl = "polaroid/index.html"
     ctxt = dict()
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         ctxt["galleries"] = Gallery.objects.all().filter(owner=request.user)
         ctxt["cover"] = list()
     return render(request, tpl, ctxt)
@@ -104,9 +103,13 @@ def upload(request):
         # Handle this properly (error message)
         return redirect("index")
     form = UploadForm(request.POST, request.FILES)
-    if form.is_valid(request.user):
-        form.save(request.FILES["path"], request.user)
-        return HttpResponse("OK")
+    try:
+        if form.is_valid(request.user):
+            form.save(request.FILES["path"], request.user)
+            print(request.FILES["path"])
+            return HttpResponse("OK")
+    except Exception as e:
+        return HttpResponse(status=415)
     return HttpResponse("KO")
 
 
